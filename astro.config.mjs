@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 const basePath = (process.env.BASE_PATH ?? '/').replace(/\/+$/, '') || '/';
 
 export default defineConfig({
-  site: 'https://daviguides.github.io',
+  site: 'https://tiphareth.com.br',
   base: basePath,
   integrations: [mdx()],
   vite: {
