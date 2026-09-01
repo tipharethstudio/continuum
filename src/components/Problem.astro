@@ -80,7 +80,13 @@ const pains = [
 ---
 
 <section id="problem" class="py-8 md:py-14 px-6 relative scroll-mt-14">
-  <div class="max-w-7xl mx-auto">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 -right-1/4 w-[700px] h-[700px] rounded-full opacity-[0.09]"
+         style="background: radial-gradient(circle, #f38ba8 0%, transparent 70%);"></div>
+    <div class="absolute bottom-0 -left-1/5 w-[600px] h-[500px] rounded-full opacity-[0.08]"
+         style="background: radial-gradient(circle, #fab387 0%, transparent 70%);"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto">
     <span class="eyebrow mb-4 block" style="color: #f38ba8;">The problem</span>
     <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[680px] mb-4">
       Running more agents is the easy part.

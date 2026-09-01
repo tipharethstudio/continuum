@@ -2,9 +2,13 @@
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section class="py-10 md:py-16 px-6 relative">
+<section class="py-10 md:py-16 px-6 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] opacity-[0.12]"
+         style="background: radial-gradient(ellipse at center bottom, #d4af37 0%, transparent 65%);"></div>
+  </div>
   <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
-  <div class="max-w-7xl mx-auto">
+  <div class="relative max-w-7xl mx-auto">
     <div class="grid md:grid-cols-3 gap-4 mb-12">
       <div class="glass-card p-6">
         <span class="eyebrow block mb-3" style="color:#89b4fa;">The discipline</span>

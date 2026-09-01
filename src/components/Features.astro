@@ -5,9 +5,17 @@
 import Frame from './mock/Frame.astro';
 ---
 
-<section id="features" class="py-8 md:py-14 px-6 relative scroll-mt-14">
+<section id="features" class="py-8 md:py-14 px-6 relative overflow-hidden scroll-mt-14">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 -right-1/4 w-[700px] h-[700px] rounded-full opacity-[0.10]"
+         style="background: radial-gradient(circle, #94e2d5 0%, transparent 70%);"></div>
+    <div class="absolute top-1/3 -left-1/4 w-[700px] h-[700px] rounded-full opacity-[0.09]"
+         style="background: radial-gradient(circle, #cba6f7 0%, transparent 70%);"></div>
+    <div class="absolute bottom-0 right-1/4 w-[600px] h-[500px] rounded-full opacity-[0.08]"
+         style="background: radial-gradient(circle, #a6e3a1 0%, transparent 70%);"></div>
+  </div>
   <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
-  <div class="max-w-7xl mx-auto">
+  <div class="relative max-w-7xl mx-auto">
     <span class="eyebrow mb-4 block" style="color: #94e2d5;">Mechanisms</span>
     <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[640px] mb-4">
       Six things that stop living in the operator.

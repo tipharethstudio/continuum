@@ -32,9 +32,15 @@ const trail = `tasks/auth-token-rotation/
 └── sessions/*.jsonl  <span class="text-text-dim">every session: turns, cost, events</span>`;
 ---
 
-<section id="evidence" class="py-8 md:py-14 px-6 relative scroll-mt-14">
+<section id="evidence" class="py-8 md:py-14 px-6 relative overflow-hidden scroll-mt-14">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 -right-1/5 w-[700px] h-[600px] rounded-full opacity-[0.10]"
+         style="background: radial-gradient(circle, #d4af37 0%, transparent 70%);"></div>
+    <div class="absolute bottom-0 -left-1/4 w-[600px] h-[500px] rounded-full opacity-[0.08]"
+         style="background: radial-gradient(circle, #89b4fa 0%, transparent 70%);"></div>
+  </div>
   <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
-  <div class="max-w-7xl mx-auto">
+  <div class="relative max-w-7xl mx-auto">
     <span class="eyebrow mb-4 block" style="color: #d4af37;">Evidence</span>
     <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[640px] mb-4">
       The proof is a file you can open.
