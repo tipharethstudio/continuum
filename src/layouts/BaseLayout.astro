@@ -22,11 +22,11 @@ const canonical = new URL(Astro.url.pathname, site);
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="everforest">
+<html lang="en" data-theme="aubergine">
   <head>
     <script is:inline>
       document.documentElement.dataset.theme =
-        localStorage.getItem('continuum-theme') || 'everforest';
+        localStorage.getItem('continuum-theme') || 'aubergine';
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,9 +53,9 @@ const canonical = new URL(Astro.url.pathname, site);
     </main>
     <Footer />
 
-    <!-- Theme picker: preview instrument, remove before public launch of a final identity -->
-    <div class="fixed bottom-4 right-4 z-50 glass-pane px-3 py-2 flex items-center gap-2"
-         role="group" aria-label="Theme preview picker">
+    <!-- Theme picker: easter egg, revealed with Cmd+Alt+X -->
+    <div id="theme-picker" hidden class="fixed bottom-4 right-4 z-50 glass-pane px-3 py-2 flex items-center gap-2"
+         role="group" aria-label="Theme picker">
       {[
         ['catppuccin', '#1e1e2e', '#89b4fa'],
         ['everforest', '#252a23', '#a6e3a1'],
@@ -80,6 +80,13 @@ const canonical = new URL(Astro.url.pathname, site);
           localStorage.setItem('continuum-theme', t);
         })
       );
+      document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.altKey && e.code === 'KeyX') {
+          e.preventDefault();
+          const p = document.getElementById('theme-picker');
+          p.hidden = !p.hidden;
+        }
+      });
     </script>
   </body>
 </html>

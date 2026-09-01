@@ -190,6 +190,8 @@
   .breathing { animation: breath 2.2s ease-in-out infinite; }
 }
 
+#theme-picker[hidden] { display: none !important; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
