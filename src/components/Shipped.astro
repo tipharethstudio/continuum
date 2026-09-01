@@ -33,12 +33,21 @@ const works = [
     </p>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-      {works.map((w) => (
+      {works.map((w) => w.href ? (
+        <a href={w.href} class="glass-card p-5 flex flex-col gap-2 group cursor-pointer">
+          <div class="flex items-baseline justify-between gap-3">
+            <span class="text-[1rem] font-display font-semibold text-text-primary group-hover:text-[#89b4fa] transition-colors">
+              {w.name} <span class="font-mono text-[0.75rem] text-text-dim group-hover:text-[#89b4fa] transition-colors">↗</span>
+            </span>
+            <span class="font-mono text-[0.6875rem] text-[#a6e3a1] whitespace-nowrap">{w.tasks}</span>
+          </div>
+          <p class="text-[0.78125rem] text-text-muted">{w.what}</p>
+          <span class="mt-auto pt-1 font-mono text-[0.625rem] text-text-dim group-hover:text-text-muted transition-colors">read the work →</span>
+        </a>
+      ) : (
         <div class="glass-card p-5 flex flex-col gap-2">
           <div class="flex items-baseline justify-between gap-3">
-            {w.href
-              ? <a href={w.href} class="text-[1rem] font-display font-semibold text-text-primary hover:text-[#89b4fa]">{w.name}</a>
-              : <span class="text-[1rem] font-display font-semibold text-text-primary">{w.name}</span>}
+            <span class="text-[1rem] font-display font-semibold text-text-primary">{w.name}</span>
             <span class="font-mono text-[0.6875rem] text-[#a6e3a1] whitespace-nowrap">{w.tasks}</span>
           </div>
           <p class="text-[0.78125rem] text-text-muted">{w.what}</p>
