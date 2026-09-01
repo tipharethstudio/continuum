@@ -146,12 +146,24 @@ const briefStyle = 'color:#89b4fa;border-color:rgba(137,180,250,.4);background:r
     </div>
     <!-- Definition block: plain-language, right after the visual hook -->
     <div class="mt-12 glass-pane p-6 md:p-8 animate-emerge" style="animation-delay: 500ms;">
-      <span class="eyebrow block mb-3" style="color:#d4af37;">What is Continuum?</span>
-      <p class="text-[0.9375rem] text-text-secondary max-w-[720px]">
-        A desktop workstation that sits <strong>above</strong> your editor and your agents,
-        not in place of them. Raw demand goes in; verified delivery comes out; your job
-        becomes intent and judgment. The rest of this page is the long answer.
-      </p>
+      <div class="flex items-baseline justify-between gap-4 mb-5">
+        <span class="eyebrow" style="color:#d4af37;">What is Continuum?</span>
+        <span class="font-mono text-[0.625rem] text-text-dim">the rest of this page is the long answer</span>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div>
+          <div class="text-[0.9375rem] font-display font-semibold text-text-primary mb-1">Above, not instead</div>
+          <p class="text-[0.8125rem] text-text-muted">A desktop workstation that sits above your editor and your agents. Keep both.</p>
+        </div>
+        <div>
+          <div class="text-[0.9375rem] font-display font-semibold text-text-primary mb-1">Demand in, delivery out</div>
+          <p class="text-[0.8125rem] text-text-muted">A raw signal becomes briefs, briefs become a fleet, and done is proven on the remote.</p>
+        </div>
+        <div>
+          <div class="text-[0.9375rem] font-display font-semibold text-text-primary mb-1">Your job moves up</div>
+          <p class="text-[0.8125rem] text-text-muted">The typing goes to the fleet. Intent and judgment stay with you.</p>
+        </div>
+      </div>
     </div>
   </div>
   <div class="continuum-rule max-w-7xl mx-auto"></div>
