@@ -1,0 +1,57 @@
+---
+// Proof of generality: the same line ships very different software.
+// Own and studio works only; task counts read from the live ledger.
+const works = [
+  { name: 'Compass', what: 'A career-navigation ecosystem: desktop app, 27 CLI tools, a conversational agent.', tasks: '117 tasks', href: 'https://tiphareth.com.br/works/compass/' },
+  { name: 'Continuum', what: 'This product. The line was used to build the line, gates and all.', tasks: '93 tasks', href: 'https://tiphareth.com.br/works/continuum/' },
+  { name: 'The-saurus', what: 'A semantic thesaurus engine and its tooling.', tasks: '73 tasks', href: null },
+  { name: 'PrismDB', what: 'An embedded search engine in Rust, and the site that argues for it.', tasks: 'engine + site', href: 'https://tiphareth.com.br/prismdb/' },
+  { name: 'Marks', what: 'The declared test bench: a repo that exists to exercise the pipeline, planted forks and all.', tasks: '34 tasks', href: null },
+  { name: 'Ciclus', what: 'A life-rhythms desktop app, sibling ecosystem to Compass.', tasks: '16 tasks', href: 'https://tiphareth.com.br/works/ciclus/' },
+];
+---
+
+<section id="shipped" class="py-8 md:py-14 px-6 relative overflow-hidden scroll-mt-14">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 -left-1/5 w-[700px] h-[600px] rounded-full opacity-[0.09]"
+         style="background: radial-gradient(circle, #a6e3a1 0%, transparent 70%);"></div>
+    <div class="absolute bottom-0 -right-1/5 w-[600px] h-[500px] rounded-full opacity-[0.08]"
+         style="background: radial-gradient(circle, #94e2d5 0%, transparent 70%);"></div>
+  </div>
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #a6e3a1;">Shipped through the line</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[640px] mb-4">
+      One line, very different software.
+    </h2>
+    <p class="text-text-muted max-w-[620px] mb-12">
+      The usual objection to a dogfooded tool is that it only works on its creator's
+      repo. The ledger says otherwise: a Rust search engine, two desktop ecosystems,
+      a semantic engine, and the sites that argue for them, all through the same
+      capture-to-verified line. Task counts below are read from the ledger, not
+      estimated.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+      {works.map((w) => (
+        <div class="glass-card p-5 flex flex-col gap-2">
+          <div class="flex items-baseline justify-between gap-3">
+            {w.href
+              ? <a href={w.href} class="text-[1rem] font-display font-semibold text-text-primary hover:text-[#89b4fa]">{w.name}</a>
+              : <span class="text-[1rem] font-display font-semibold text-text-primary">{w.name}</span>}
+            <span class="font-mono text-[0.6875rem] text-[#a6e3a1] whitespace-nowrap">{w.tasks}</span>
+          </div>
+          <p class="text-[0.78125rem] text-text-muted">{w.what}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-[0.875rem] text-text-secondary">
+      Continuum shipped itself, <span class="font-mono text-[0.8125rem] text-[#a6e3a1]">93 tasks</span> and counting.
+      <span class="text-[#d4af37]">It also shipped this page.</span>
+    </p>
+    <p class="mt-2 text-center font-mono text-[0.625rem] text-text-dim">
+      The public works are argued, one thesis each, at <a href="https://tiphareth.com.br/#works" class="text-text-muted hover:text-text-primary">tiphareth.com.br</a>.
+    </p>
+  </div>
+</section>
