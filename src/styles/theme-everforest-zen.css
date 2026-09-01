@@ -15,10 +15,10 @@
   --color-surface1: #47503f;
 
   /* Text: cream over forest, lifted so the room reads lit */
-  --color-text-primary: #efe9c8;
-  --color-text-secondary: #ddd7b6;
-  --color-text-muted: #b7c4ba;
-  --color-text-dim: #8d9a90;
+  --color-text-primary: #f8f3e0;
+  --color-text-secondary: #eae4c8;
+  --color-text-muted: #c9d4cb;
+  --color-text-dim: #9faca2;
 
   /* Gold stays: it is the brand, not the theme */
   --color-gold: #d4af37;
