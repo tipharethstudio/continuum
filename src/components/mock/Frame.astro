@@ -1,0 +1,19 @@
+---
+// The shared frame for every adapted product view on the site.
+// One frame, one shadow, one header grammar: that is what makes six
+// different mocks read as one product (the AccelVeo DashboardPanel lesson).
+interface Props {
+  title: string;
+  meta?: string;
+  accent?: string;
+}
+const { title, meta = '', accent = '#89b4fa' } = Astro.props;
+---
+
+<div class="glass-pane p-4 md:p-5" style="box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+  <div class="flex items-center justify-between mb-4 px-1 gap-4">
+    <span class="eyebrow" style={`color:${accent};`}>{title}</span>
+    {meta && <span class="font-mono text-[0.625rem] text-text-dim text-right">{meta}</span>}
+  </div>
+  <slot />
+</div>
