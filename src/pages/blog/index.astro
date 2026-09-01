@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    title: 'Intent Engineering: Working Above the IDE',
+    date: '2026-04-25',
+    description:
+      'Code became a byproduct; the scarce input is well-formed intent. Notes on a year of building and daily-driving a post-IDE workstation. The founding essay of the discipline Continuum is built for.',
+    href: 'https://daviguides.github.io/articles/machine-learning/2026/04/25/intent-engineering.html',
+    tag: 'founding essay',
+    color: '#d4af37',
+  },
+  {
+    title: 'Thirteen Agents in Parallel: a Postmortem',
+    date: '2026-03-28',
+    description:
+      'Every incident was ops, none was intelligence. What running thirteen concurrent strands of judgment taught about lifecycle, verification, isolation and memory: the supervision failures Continuum now prevents by construction.',
+    href: 'https://daviguides.github.io/articles/machine-learning/2026/03/28/thirteen-agents-postmortem.html',
+    tag: 'postmortem',
+    color: '#f38ba8',
+  },
+];
+---
+
+<BaseLayout title="Blog · Continuum" description="Writing on Intent Engineering and running fleets of agents on real work.">
+  <section class="py-12 md:py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="eyebrow mb-4 block" style="color:#89b4fa;">Blog</span>
+      <h1 class="text-[2rem] md:text-[2.5rem] mb-4">Writing from the layer above the editor</h1>
+      <p class="text-text-muted max-w-[600px] mb-12">
+        Essays and postmortems from a year of Intent Engineering in production. New posts
+        land here; the earlier ones live on the founder's site.
+      </p>
+
+      <div class="flex flex-col gap-4">
+        {posts.map((p) => (
+          <a href={p.href} class="glass-card p-6 block group">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="stage-chip" style={`color:${p.color};border-color:${p.color}66;background:${p.color}0f`}>{p.tag.toUpperCase()}</span>
+              <span class="font-mono text-[0.6875rem] text-text-dim">{p.date}</span>
+            </div>
+            <h2 class="text-[1.125rem] mb-2 group-hover:text-[#89b4fa] transition-colors">{p.title}</h2>
+            <p class="text-[0.8125rem] text-text-muted max-w-[640px]">{p.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

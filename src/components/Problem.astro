@@ -1,0 +1,113 @@
+---
+const pains = [
+  {
+    title: 'The session is the wrong container',
+    body: 'Context accumulates until the window fills, and then the understanding built inside it ends. A transcript records everything and privileges nothing: the decision weighs the same as the typos.',
+    svg: `<svg viewBox="0 0 220 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g font-family="Fira Code, monospace" font-size="8">
+        <rect x="14" y="14" width="84" height="58" rx="5" stroke="#7f849c" stroke-width="1.25" fill="rgba(127,132,156,0.06)"/>
+        <line x1="22" y1="26" x2="88" y2="26" stroke="#89b4fa" stroke-width="1" opacity="0.7"/>
+        <line x1="22" y1="36" x2="80" y2="36" stroke="#89b4fa" stroke-width="1" opacity="0.55"/>
+        <line x1="22" y1="46" x2="90" y2="46" stroke="#89b4fa" stroke-width="1" opacity="0.4"/>
+        <line x1="22" y1="56" x2="76" y2="56" stroke="#89b4fa" stroke-width="1" opacity="0.25"/>
+        <text x="56" y="86" fill="#7f849c" text-anchor="middle">window fills</text>
+        <line x1="106" y1="43" x2="130" y2="43" stroke="#7f849c" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+        <path d="M130 40l6 3-6 3z" fill="#7f849c" opacity="0.7"/>
+        <text x="172" y="40" fill="#f38ba8" text-anchor="middle" font-size="11">×</text>
+        <text x="172" y="58" fill="#7f849c" text-anchor="middle">nothing handed</text>
+        <text x="172" y="70" fill="#7f849c" text-anchor="middle">to the successor</text>
+      </g>
+    </svg>`,
+  },
+  {
+    title: 'The human became the scheduler',
+    body: 'The agent writes the code. The person opens sessions, loads context, composes prompts, watches the window, saves state, repeats. Measured: one task, eight sessions, human input almost entirely "resume" and "go ahead".',
+    svg: `<svg viewBox="0 0 220 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g font-family="Fira Code, monospace" font-size="8">
+        <circle cx="110" cy="26" r="9" stroke="#fab387" stroke-width="1.25" fill="rgba(250,179,135,0.08)"/>
+        <text x="110" y="29" fill="#fab387" text-anchor="middle" font-size="7">you</text>
+        <line x1="102" y1="33" x2="42" y2="62" stroke="#7f849c" stroke-width="1" opacity="0.6"/>
+        <line x1="107" y1="35" x2="88" y2="62" stroke="#7f849c" stroke-width="1" opacity="0.6"/>
+        <line x1="113" y1="35" x2="132" y2="62" stroke="#7f849c" stroke-width="1" opacity="0.6"/>
+        <line x1="118" y1="33" x2="178" y2="62" stroke="#7f849c" stroke-width="1" opacity="0.6"/>
+        <rect x="26" y="64" width="32" height="16" rx="3" stroke="#89b4fa" stroke-width="1" fill="rgba(137,180,250,0.06)"/>
+        <rect x="72" y="64" width="32" height="16" rx="3" stroke="#89b4fa" stroke-width="1" fill="rgba(137,180,250,0.06)"/>
+        <rect x="118" y="64" width="32" height="16" rx="3" stroke="#89b4fa" stroke-width="1" fill="rgba(137,180,250,0.06)"/>
+        <rect x="164" y="64" width="32" height="16" rx="3" stroke="#89b4fa" stroke-width="1" fill="rgba(137,180,250,0.06)"/>
+        <text x="110" y="92" fill="#7f849c" text-anchor="middle">brief · watch · transition · remember</text>
+      </g>
+    </svg>`,
+  },
+  {
+    title: 'Declared done is not verified done',
+    body: 'Documented scar: four tasks marked done in state files, nothing on the remote, worktrees deleted, $13.50 silently destroyed. An agent that says it finished and an agent that finished are indistinguishable without evidence.',
+    svg: `<svg viewBox="0 0 220 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g font-family="Fira Code, monospace" font-size="8">
+        <rect x="14" y="24" width="76" height="20" rx="4" stroke="#a6e3a1" stroke-width="1" fill="rgba(166,227,161,0.07)"/>
+        <text x="52" y="37" fill="#a6e3a1" text-anchor="middle">status: done</text>
+        <text x="52" y="60" fill="#7f849c" text-anchor="middle">the claim</text>
+        <line x1="98" y1="34" x2="122" y2="34" stroke="#7f849c" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+        <rect x="130" y="24" width="76" height="20" rx="4" stroke="#f38ba8" stroke-width="1" fill="rgba(243,139,168,0.07)"/>
+        <text x="168" y="37" fill="#f38ba8" text-anchor="middle">remote: empty</text>
+        <text x="168" y="60" fill="#7f849c" text-anchor="middle">the evidence</text>
+        <text x="110" y="86" fill="#7f849c" text-anchor="middle">nothing in between checks</text>
+      </g>
+    </svg>`,
+  },
+  {
+    title: 'The bottleneck is upstream of execution',
+    body: 'Demand arrives malformed: a Slack thread, a feeling the release is risky, a promise made in a meeting. Turning that into a dependency-ordered set of executable tasks is hours of unassisted work, and every tool on the market starts after it.',
+    svg: `<svg viewBox="0 0 220 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g font-family="Fira Code, monospace" font-size="8">
+        <path d="M18 30 q10 -12 22 -2 t20 -4 t18 6" stroke="#f9e2af" stroke-width="1.25" fill="none" opacity="0.8"/>
+        <path d="M20 48 q14 8 26 0 t22 4" stroke="#f9e2af" stroke-width="1.25" fill="none" opacity="0.6"/>
+        <path d="M16 66 q12 -6 24 2 t26 -2" stroke="#f9e2af" stroke-width="1.25" fill="none" opacity="0.7"/>
+        <text x="46" y="88" fill="#7f849c" text-anchor="middle">malformed demand</text>
+        <line x1="96" y1="48" x2="120" y2="48" stroke="#7f849c" stroke-width="1" opacity="0.6"/>
+        <path d="M120 45l6 3-6 3z" fill="#7f849c" opacity="0.6"/>
+        <rect x="132" y="20" width="30" height="14" rx="3" stroke="#89b4fa" stroke-width="1" fill="rgba(137,180,250,0.06)"/>
+        <rect x="132" y="41" width="30" height="14" rx="3" stroke="#89b4fa" stroke-width="1" fill="rgba(137,180,250,0.06)"/>
+        <rect x="132" y="62" width="30" height="14" rx="3" stroke="#89b4fa" stroke-width="1" fill="rgba(137,180,250,0.06)"/>
+        <line x1="162" y1="27" x2="176" y2="45" stroke="#7f849c" stroke-width="0.75" opacity="0.5"/>
+        <line x1="162" y1="48" x2="176" y2="48" stroke="#7f849c" stroke-width="0.75" opacity="0.5"/>
+        <line x1="162" y1="69" x2="176" y2="51" stroke="#7f849c" stroke-width="0.75" opacity="0.5"/>
+        <rect x="178" y="41" width="28" height="14" rx="3" stroke="#7f849c" stroke-width="1" stroke-dasharray="3 2" fill="none"/>
+        <text x="169" y="90" fill="#7f849c" text-anchor="middle">task DAG, by hand</text>
+      </g>
+    </svg>`,
+  },
+];
+---
+
+<section id="problem" class="py-8 md:py-14 px-6 relative scroll-mt-14">
+  <div class="max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #f38ba8;">The problem</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[680px] mb-4">
+      Running more agents is the easy part.
+    </h2>
+    <p class="text-text-muted max-w-[600px] mb-4">
+      Every one of them must be briefed, watched, transitioned and remembered, and all of
+      that lands on the single component that does not scale: <strong>the person</strong>.
+    </p>
+    <p class="text-text-muted max-w-[600px] mb-12">
+      Capacity went up. The choreography went up with it, and it went up in the human. Four
+      places it hurts:
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-4 max-w-6xl mx-auto">
+      {pains.map((pain, i) => (
+        <div class="glass-card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem]
+                        font-mono text-text-dim border border-surface1 shrink-0">
+              {i + 1}
+            </span>
+            <h3 class="text-[0.9375rem] font-display leading-none">{pain.title}</h3>
+          </div>
+          <div class="w-full max-w-[380px] mx-auto mb-4 opacity-90" set:html={pain.svg} />
+          <p class="text-[0.8125rem] text-text-muted leading-relaxed pl-8">{pain.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

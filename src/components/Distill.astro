@@ -1,0 +1,63 @@
+---
+// The central reliever: the pipeline that answers the upstream pain,
+// mirrored in its vocabulary. Category chips reuse the app's status ramp.
+const steps = [
+  { name: 'CAPTURE', color: '#f9e2af', body: 'Everything lands in an inbox that carries no obligation: a thread, an alert, an idea at midnight.' },
+  { name: 'REFINE', color: '#89dceb', body: 'Findings surface, ambiguities are forced up and resolved by you, before execution, never mid-flight.' },
+  { name: 'BRIEFS', color: '#89b4fa', body: 'Egested as briefs a competent stranger could execute: acceptance criteria, dependency order, workflow mode.' },
+  { name: 'QUEUE', color: '#cba6f7', body: 'WIP-limited, dependency-ordered. How much runs at once is a number you set, not a habit you fight.' },
+  { name: 'IMPLEMENT', color: '#a6e3a1', body: 'Each task moves through gated modes; every session records its cost, turns and artifacts.' },
+  { name: 'VERIFY', color: '#d4af37', body: 'Delivery is checked against the remote, and what could not be read reports as a gap, not a zero.' },
+];
+---
+
+<section id="distill" class="py-8 md:py-14 px-6 relative overflow-hidden scroll-mt-14">
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #89b4fa;">The product</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[680px] mb-4">
+      One line per signal, capture to verified delivery.
+    </h2>
+    <p class="text-text-muted max-w-[600px] mb-3">
+      Intent Distill is the surface; the prepare governor drives it. A malformed signal
+      enters; refined briefs leave; the queue takes them into implementation. The
+      choreography you used to perform between sessions <strong>is the product</strong>.
+    </p>
+    <p class="text-[0.8125rem] text-text-dim max-w-[600px] mb-12">
+      Fire-and-forget when you want it: the line runs unattended end to end. Whatever
+      deserves your answer lands in a <span class="font-mono text-[#fab387]">NEEDS YOU</span> queue
+      and notifies you, desktop and mobile, so the line never sits idle. Answering always
+      wins; nothing outward-facing fires without you.
+    </p>
+
+    <!-- The line -->
+    <div class="glass-pane p-6 md:p-8">
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-3">
+        {steps.map((s, i) => (
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <span class="stage-chip" style={`color:${s.color};border-color:${s.color}66;background:${s.color}0f`}>{s.name}</span>
+              {i < steps.length - 1 && <span class="hidden lg:inline text-surface1 font-mono text-[0.625rem]">──</span>}
+            </div>
+            <p class="text-[0.75rem] text-text-muted leading-relaxed">{s.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-6 pt-5 border-t border-[rgba(255,255,255,0.06)] grid md:grid-cols-3 gap-4 text-[0.8125rem]">
+        <div>
+          <span class="font-mono text-[0.6875rem] text-[#fab387]">NEEDS YOU</span>
+          <p class="text-text-muted mt-1">Only three things escalate: a product or scope decision, a fact only you know, an outward-facing effect. Everything else is arbitrated with a recorded rationale.</p>
+        </div>
+        <div>
+          <span class="font-mono text-[0.6875rem] text-[#d4af37]">RECEIPTS</span>
+          <p class="text-text-muted mt-1">Every decision taken in your name is recorded: the action, the object, the criterion used, and a deep link that reopens the exact session.</p>
+        </div>
+        <div>
+          <span class="font-mono text-[0.6875rem] text-[#94e2d5]">THE LOOP CLOSES</span>
+          <p class="text-text-muted mt-1">A run's own findings re-enter through the same front door as any signal. What the work turned up but did not do is never lost; it queues.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

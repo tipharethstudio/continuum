@@ -1,0 +1,69 @@
+---
+// Each mechanism answers a numbered pain with its own vocabulary.
+const features = [
+  {
+    label: 'The task outlives the session',
+    pain: 'answers pain 1',
+    color: '#89b4fa',
+    body: 'The session is disposable by design; the task is not. One YAML per task, in git, beside the work but outside the source tree. The artifacts of each mode (brief, exploration, research, plan, validation) are the memory, and they are addressable files, not scrollback.',
+  },
+  {
+    label: 'The choreography is the product',
+    pain: 'answers pain 2',
+    color: '#fab387',
+    body: 'The runner composes each mode’s prompt: the task’s state, the files that must be in front of the agent, the standards for this mode. Hooks rebase before, commit and push after, write state back. Eight manual setups became one command.',
+  },
+  {
+    label: 'Done that proves itself',
+    pain: 'answers pain 3',
+    color: '#d4af37',
+    body: 'Gates are files on disk, checkable by anything that can read a directory. The scoreboard reads the remote, never the local checkout, and prints the ref, the sha, and when it looked. An agent that reports finished and an agent that finished become distinguishable.',
+  },
+  {
+    label: 'The refinery closes the gap upstream',
+    pain: 'answers pain 4',
+    color: '#89dceb',
+    body: 'Signal to findings to decisions to briefs to issues, with adversarial lenses applied while the refinery can still fix what it wrote: did the plan silently shrink, did it invent scope, is this really two tasks, is the dependency graph right.',
+  },
+  {
+    label: 'A limit that actually holds',
+    pain: 'supervision bandwidth',
+    color: '#cba6f7',
+    body: 'Work waiting to run is a queue with priorities and dependencies, resolved in topological order. WIP is a number you set. Something genuinely blocked stays blocked instead of being started twice because nobody remembered the first time.',
+  },
+  {
+    label: 'An economics ledger nobody else has',
+    pain: 'cost, answered',
+    color: '#a6e3a1',
+    body: 'Cost and turns per session, per mode, per task. Where the time goes, which mode is expensive, whether a task was badly sized: questions with answers. A full M-sized task, measured end to end, at about $2 of agent spend.',
+  },
+];
+---
+
+<section id="features" class="py-8 md:py-14 px-6 relative scroll-mt-14">
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #94e2d5;">Mechanisms</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[640px] mb-4">
+      Six things that stop living in the operator.
+    </h2>
+    <p class="text-text-muted max-w-[600px] mb-12">
+      None of them is judgment. Some things genuinely require it: is this the right plan,
+      is this worth starting, is this actually done. There the work stops and waits for you.
+      Everything else moves.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {features.map((f) => (
+        <div class="glass-card p-6 flex flex-col gap-3">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="text-[0.9375rem] font-display leading-tight">{f.label}</h3>
+            <span class="w-2 h-2 rounded-full shrink-0" style={`background:${f.color}`}></span>
+          </div>
+          <span class="font-mono text-[0.625rem] uppercase tracking-wider" style={`color:${f.color}`}>{f.pain}</span>
+          <p class="text-[0.8125rem] text-text-muted leading-relaxed">{f.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

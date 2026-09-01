@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 100 100">
+  <defs>
+    <!-- Outer lenses gradient: deep purple → magenta -->
+    <linearGradient id="outerLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5F4B8B"/>
+      <stop offset="100%" style="stop-color:#A1006B"/>
+    </linearGradient>
+    <linearGradient id="outerRight" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#5F4B8B"/>
+      <stop offset="100%" style="stop-color:#A1006B"/>
+    </linearGradient>
+    <!-- Inner lenses gradient: magenta → solar fire -->
+    <linearGradient id="innerLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A1006B"/>
+      <stop offset="100%" style="stop-color:#FF5E00"/>
+    </linearGradient>
+    <linearGradient id="innerRight" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#A1006B"/>
+      <stop offset="100%" style="stop-color:#FF5E00"/>
+    </linearGradient>
+    <!-- Solar center gradient -->
+    <radialGradient id="solarCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#D4AF37"/>
+    </radialGradient>
+    <!-- Golden glow -->
+    <radialGradient id="solarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0"/>
+    </radialGradient>
+    <!-- Soft blur for glow -->
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <!-- Shadow blur for inner edges -->
+    <filter id="shadowBlur">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- Solar glow behind center -->
+  <circle cx="50" cy="50" r="18" fill="url(#solarGlow)" filter="url(#blur)"/>
+
+  <!-- === LEFT SIDE === -->
+
+  <!-- Left outer lens (main arc: M25 30 C15 40 15 60 25 70) -->
+  <path d="M25 30C15 40 15 60 25 70" stroke="url(#outerLeft)" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <!-- Left outer — inner edge shadow (offset inward, same curvature) -->
+  <path d="M27 33C19 42 19 58 27 67" stroke="black" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.25" filter="url(#shadowBlur)"/>
+  <!-- Left outer — outer edge highlight (offset outward, same curvature) -->
+  <path d="M23 29C12 40 12 60 23 71" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.25"/>
+
+  <!-- Left inner lens (main arc: M38 38 C32 42 32 58 38 62) -->
+  <path d="M38 38C32 42 32 58 38 62" stroke="url(#innerLeft)" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <!-- Left inner — inner edge shadow (offset inward, same curvature) -->
+  <path d="M39.5 40C35 43 35 57 39.5 60" stroke="black" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.2" filter="url(#shadowBlur)"/>
+  <!-- Left inner — outer edge highlight (offset outward, same curvature) -->
+  <path d="M36.5 37C29 42 29 58 36.5 63" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- === RIGHT SIDE === -->
+
+  <!-- Right outer lens (main arc: M75 30 C85 40 85 60 75 70) -->
+  <path d="M75 30C85 40 85 60 75 70" stroke="url(#outerRight)" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <!-- Right outer — inner edge shadow (offset inward, same curvature) -->
+  <path d="M73 33C81 42 81 58 73 67" stroke="black" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.25" filter="url(#shadowBlur)"/>
+  <!-- Right outer — outer edge highlight (offset outward, same curvature) -->
+  <path d="M77 29C88 40 88 60 77 71" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.25"/>
+
+  <!-- Right inner lens (main arc: M62 38 C68 42 68 58 62 62) -->
+  <path d="M62 38C68 42 68 58 62 62" stroke="url(#innerRight)" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <!-- Right inner — inner edge shadow (offset inward, same curvature) -->
+  <path d="M60.5 40C65 43 65 57 60.5 60" stroke="black" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.2" filter="url(#shadowBlur)"/>
+  <!-- Right inner — outer edge highlight (offset outward, same curvature) -->
+  <path d="M63.5 37C71 42 71 58 63.5 63" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Solar fulgor center -->
+  <circle cx="50" cy="50" r="8" fill="url(#solarCenter)" opacity="0.95"/>
+</svg>

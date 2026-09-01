@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const facts = [
+  ['Product', 'Continuum, a desktop workstation for Intent Engineering'],
+  ['Category', 'Intent Engineering: the layer above the agentic IDE'],
+  ['Thesis', 'Intent is the input; code is a byproduct; done is verified, not declared'],
+  ['Status', 'In production daily since 2025; being hardened for external users'],
+  ['Origin', 'Built by its first user at Tiphareth Studio'],
+  ['Scale', '~500 tasks executed, ~1,170 agent sessions, ~45,000 turns, multiple real organizations'],
+  ['Stack', 'Desktop app (Tauri), CLI tools, filesystem + git state, model-agnostic'],
+  ['Founding essay', 'Intent Engineering (April 2026)'],
+];
+---
+
+<BaseLayout title="Press · Continuum" description="Press kit: facts, boilerplate, and the mark.">
+  <section class="py-12 md:py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="eyebrow mb-4 block" style="color:#cba6f7;">Press kit</span>
+      <h1 class="text-[2rem] md:text-[2.5rem] mb-4">Continuum, in brief</h1>
+
+      <div class="glass-pane p-6 md:p-8 mb-8">
+        <h2 class="text-[1.0625rem] mb-3">Boilerplate</h2>
+        <p class="text-[0.875rem] text-text-secondary max-w-[680px]">
+          Continuum is a workstation for Intent Engineering: it turns raw demand signals
+          (a thread, a meeting, an idea) into refined, executable briefs, runs them
+          through fleets of coding agents under explicit supervision limits, and verifies
+          delivery against the remote rather than trusting an agent's own report. Work
+          state lives as files in git, so tasks outlive sessions, machines and model
+          vendors. Continuum has been daily-driven in production by its creator for a
+          year across multiple real organizations. It is a Tiphareth Studio system.
+        </p>
+      </div>
+
+      <div class="glass-pane p-6 md:p-8 mb-8">
+        <h2 class="text-[1.0625rem] mb-4">Fact sheet</h2>
+        <table class="w-full text-[0.8125rem]">
+          <tbody>
+            {facts.map(([k, v]) => (
+              <tr class="border-b border-[rgba(255,255,255,0.06)] last:border-0">
+                <td class="py-2.5 pr-6 font-mono text-[0.6875rem] uppercase tracking-wider text-text-dim whitespace-nowrap align-top">{k}</td>
+                <td class="py-2.5 text-text-secondary">{v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="glass-pane p-6 md:p-8 mb-8">
+        <h2 class="text-[1.0625rem] mb-4">The mark</h2>
+        <div class="flex items-center gap-8 flex-wrap">
+          <div class="glass-card p-6 flex items-center justify-center">
+            <img src={`${base}/continuum.svg`} alt="Continuum mark: two pairs of arcs converging on a golden center" width="96" height="96" />
+          </div>
+          <div class="text-[0.8125rem] text-text-muted max-w-[400px]">
+            <p class="mb-3">Converging arcs around a solar center: focus arriving at the
+            point where judgment lives. Use on dark backgrounds; do not recolor.</p>
+            <a href={`${base}/continuum.svg`} download class="font-mono text-[0.75rem] text-[#89b4fa]">Download SVG →</a>
+            <span class="text-text-dim font-mono text-[0.75rem]"> · </span>
+            <a href={`${base}/continuum-128.png`} download class="font-mono text-[0.75rem] text-[#89b4fa]">PNG →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-[0.8125rem] text-text-muted">
+        Press contact: <a href="https://www.linkedin.com/in/daviguides/" class="text-[#89b4fa]">Davi Guides</a>
+        <span class="font-mono text-text-dim"> · Tiphareth Studio</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

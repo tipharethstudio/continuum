@@ -1,0 +1,53 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<footer class="mt-8">
+  <div class="continuum-rule max-w-7xl mx-auto"></div>
+  <div class="max-w-7xl mx-auto px-6 py-10 grid gap-8 md:grid-cols-4 text-[0.8125rem]">
+    <div>
+      <div class="flex items-center gap-2 mb-2">
+        <img src={`${base}/continuum.svg`} alt="" width="20" height="20" aria-hidden="true" />
+        <span class="font-display font-semibold text-text-primary">Continuum</span>
+      </div>
+      <p class="text-text-dim max-w-[26ch]">
+        A workstation for Intent Engineering. Intent is the input; code is a byproduct.
+      </p>
+    </div>
+    <div>
+      <div class="eyebrow mb-3">Product</div>
+      <ul class="space-y-1.5 text-text-muted">
+        <li><a href={`${base}/#problem`} class="hover:text-text-primary">The problem</a></li>
+        <li><a href={`${base}/#distill`} class="hover:text-text-primary">Intent Distill</a></li>
+        <li><a href={`${base}/#architecture`} class="hover:text-text-primary">Architecture</a></li>
+        <li><a href={`${base}/#evidence`} class="hover:text-text-primary">Evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="eyebrow mb-3">Writing</div>
+      <ul class="space-y-1.5 text-text-muted">
+        <li>
+          <a href="https://daviguides.github.io/articles/machine-learning/2026/04/25/intent-engineering.html"
+             class="hover:text-text-primary">Intent Engineering</a>
+        </li>
+        <li>
+          <a href="https://daviguides.github.io/articles/machine-learning/2026/03/28/thirteen-agents-postmortem.html"
+             class="hover:text-text-primary">Thirteen agents postmortem</a>
+        </li>
+        <li><a href={`${base}/blog/`} class="hover:text-text-primary">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="eyebrow mb-3">Company</div>
+      <ul class="space-y-1.5 text-text-muted">
+        <li><a href={`${base}/press/`} class="hover:text-text-primary">Press kit</a></li>
+        <li><a href="https://github.com/daviguides" class="hover:text-text-primary">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/daviguides/" class="hover:text-text-primary">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 pb-8 flex flex-wrap items-center justify-between gap-2 text-[0.6875rem] font-mono text-text-dim">
+    <span>Continuum · a Tiphareth Studio system</span>
+    <span>Daily-driven in production since 2025</span>
+  </div>
+</footer>

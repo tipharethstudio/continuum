@@ -1,0 +1,74 @@
+---
+// Three planes; judgment concentrates at the top. State is a file, not a claim.
+---
+
+<section id="architecture" class="py-8 md:py-14 px-6 relative scroll-mt-14">
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #cba6f7;">Architecture</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[620px] mb-4">
+      Three planes. State is a file, not a claim.
+    </h2>
+    <p class="text-text-muted max-w-[600px] mb-12">
+      There is no database in any of this. Work state is YAML and markdown in a directory
+      tree, kept in git, deliberately separated from the source it acts on. That separation
+      is what lets one task outlive a branch, a worktree, a machine, and the vendor of the
+      model underneath.
+    </p>
+
+    <div class="grid lg:grid-cols-[1.1fr_1fr] gap-8 items-start">
+      <!-- Planes diagram -->
+      <div class="glass-pane p-6">
+        <svg viewBox="0 0 560 330" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full"
+             role="img" aria-label="Three planes: the context plane refines demand into briefs, the orchestration plane executes tasks through gated modes, the substrate runs anywhere; judgment concentrates at the top where the person is">
+          <g font-family="Fira Code, monospace">
+            <!-- Person -->
+            <circle cx="280" cy="26" r="12" stroke="#d4af37" stroke-width="1.5" fill="rgba(212,175,55,0.08)"/>
+            <text x="280" y="30" fill="#d4af37" font-size="9" text-anchor="middle">you</text>
+            <text x="418" y="30" fill="#7f849c" font-size="9">intent in · judgment out</text>
+            <line x1="280" y1="38" x2="280" y2="58" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+            <!-- Context plane -->
+            <rect x="60" y="60" width="440" height="64" rx="8" fill="rgba(24,24,37,0.6)" stroke="rgba(137,220,235,0.35)" stroke-width="1"/>
+            <text x="80" y="84" fill="#89dceb" font-size="11" font-weight="600">CONTEXT PLANE</text>
+            <text x="80" y="102" fill="#a6adc8" font-size="9">intake · refinery · instrument: demand becomes executable briefs</text>
+
+            <line x1="280" y1="124" x2="280" y2="144" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <text x="292" y="140" fill="#7f849c" font-size="8.5">briefs, executable</text>
+
+            <!-- Orchestration plane -->
+            <rect x="60" y="146" width="440" height="64" rx="8" fill="rgba(24,24,37,0.6)" stroke="rgba(203,166,247,0.35)" stroke-width="1"/>
+            <text x="80" y="170" fill="#cba6f7" font-size="11" font-weight="600">ORCHESTRATION PLANE</text>
+            <text x="80" y="188" fill="#a6adc8" font-size="9">queue · runner · gates: WIP limits, gated modes, cost per session</text>
+
+            <line x1="280" y1="210" x2="280" y2="230" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <text x="292" y="226" fill="#7f849c" font-size="8.5">sessions, disposable</text>
+
+            <!-- Substrate -->
+            <rect x="60" y="232" width="440" height="64" rx="8" fill="rgba(24,24,37,0.6)" stroke="rgba(166,227,161,0.35)" stroke-width="1"/>
+            <text x="80" y="256" fill="#a6e3a1" font-size="11" font-weight="600">SUBSTRATE</text>
+            <text x="80" y="274" fill="#a6adc8" font-size="9">a laptop, a node, a rented GPU: places where execution happens</text>
+
+            <text x="280" y="318" fill="#7f849c" font-size="9" text-anchor="middle">each plane hands the next something more executable than it was given</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Substrate facts -->
+      <div class="flex flex-col gap-4">
+        <div class="glass-card p-5">
+          <h3 class="text-[0.9375rem] mb-2">The filesystem is the schema</h3>
+          <p class="text-[0.8125rem] text-text-muted">The path on disk is the structure: initiative, milestone, task. No metadata store holds it together, so anything that can read a directory can verify progress, including you.</p>
+        </div>
+        <div class="glass-card p-5">
+          <h3 class="text-[0.9375rem] mb-2">Model-agnostic by construction</h3>
+          <p class="text-[0.8125rem] text-text-muted">Capability improves monotonically; discipline oscillates per release. Modes, gates and per-model strictness insulate the workflow from vendor variance, and the whole thing rides the subscription you already pay for. No API-key metering.</p>
+        </div>
+        <div class="glass-card p-5">
+          <h3 class="text-[0.9375rem] mb-2">Nothing to stand up</h3>
+          <p class="text-[0.8125rem] text-text-muted">No server, no account, no second system with its own opinion about what is true. The desktop app is a supervisor's view of exactly the files the tools write.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

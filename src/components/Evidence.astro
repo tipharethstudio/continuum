@@ -1,0 +1,55 @@
+---
+const stats = [
+  { n: '~500', d: 'tasks executed across multiple real organizations, one year in production', c: '#89b4fa' },
+  { n: '~45k', d: 'turns over ~1,170 agent sessions, every one with cost recorded', c: '#cba6f7' },
+  { n: '22 / 8', d: 'briefs and GitHub issues from a single signal / human touches needed', c: '#d4af37' },
+  { n: '~$2', d: 'agent spend for a full M-sized task, measured end to end', c: '#a6e3a1' },
+];
+---
+
+<section id="evidence" class="py-8 md:py-14 px-6 relative scroll-mt-14">
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #d4af37;">Evidence</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[620px] mb-4">
+      Measured, not projected.
+    </h2>
+    <p class="text-text-muted max-w-[620px] mb-12">
+      Continuum was built by its first user and has run his working life for a year:
+      his own products, client work inside a real enterprise engagement, and the studio
+      behind it (Tiphareth Studio). The numbers below come out of the system's own
+      ledger, because recording them is one of the things it does.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      {stats.map((s) => (
+        <div class="glass-card p-6">
+          <div class="font-mono text-[2rem] font-semibold text-text-primary" style={`color:${s.c}`}>{s.n}</div>
+          <p class="text-[0.78125rem] text-text-muted mt-2 leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="glass-pane p-6 md:p-8 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+      <div>
+        <h3 class="text-[1.0625rem] mb-2">The reference run</h3>
+        <p class="text-[0.875rem] text-text-muted max-w-[640px]">
+          One raw signal of about 19,000 characters went in. Out came 17 findings, 9
+          decisions, 22 executable briefs and 22 GitHub issues, with the human touching
+          the run 6 to 8 times, every touch a decision that was genuinely theirs to make.
+        </p>
+        <p class="mt-3 text-[0.8125rem] italic text-text-secondary border-l-2 border-[rgba(212,175,55,0.5)] pl-4 max-w-[640px]">
+          "This abstraction let me abstract from every detail and participate only where
+          I was actually needed."
+        </p>
+      </div>
+      <div class="font-mono text-[0.6875rem] text-text-dim leading-loose whitespace-nowrap">
+        <div>signal <span class="text-surface1">──</span> <span class="text-[#89dceb]">17 findings</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-surface1">──</span> <span class="text-[#89b4fa]">9 decisions</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-surface1">──</span> <span class="text-[#cba6f7]">22 briefs</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-surface1">──</span> <span class="text-[#a6e3a1]">22 issues</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-surface1">──</span> <span class="text-[#d4af37]">6-8 touches</span></div>
+      </div>
+    </div>
+  </div>
+</section>
