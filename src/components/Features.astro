@@ -23,7 +23,10 @@ import Frame from './mock/Frame.astro';
       <!-- 1 · task outlives session · mode progress -->
       <div class="grid lg:grid-cols-2 gap-8 items-center">
         <div>
-          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#89b4fa]">answers pain 1</span>
+          <span class="inline-flex items-center gap-2">
+            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem] font-mono text-text-dim border border-surface1 shrink-0">1</span>
+            <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#89b4fa]">answers: the wrong container</span>
+          </span>
           <h3 class="text-[1.25rem] mt-2 mb-3">The task outlives the session</h3>
           <p class="text-[0.875rem] text-text-muted max-w-[480px]">
             The session is disposable by design; the task is not. It moves through named
@@ -67,7 +70,10 @@ import Frame from './mock/Frame.astro';
           </div>
         </Frame>
         <div>
-          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#fab387]">answers pain 2</span>
+          <span class="inline-flex items-center gap-2">
+            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem] font-mono text-text-dim border border-surface1 shrink-0">2</span>
+            <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#fab387]">answers: the human scheduler</span>
+          </span>
           <h3 class="text-[1.25rem] mt-2 mb-3">The choreography is the product</h3>
           <p class="text-[0.875rem] text-text-muted max-w-[480px]">
             The prompt for each mode is composed, not typed: the task's state, the files
@@ -81,7 +87,7 @@ import Frame from './mock/Frame.astro';
       <!-- 3 · limit that holds · queue -->
       <div class="grid lg:grid-cols-2 gap-8 items-center">
         <div>
-          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#cba6f7]">supervision bandwidth</span>
+          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#cba6f7]">answers: unbounded parallelism</span>
           <h3 class="text-[1.25rem] mt-2 mb-3">A limit that actually holds</h3>
           <p class="text-[0.875rem] text-text-muted max-w-[480px]">
             Work waiting to run is a queue with priorities and dependencies, resolved in
@@ -130,7 +136,10 @@ import Frame from './mock/Frame.astro';
           </div>
         </Frame>
         <div>
-          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#89dceb]">answers pain 4</span>
+          <span class="inline-flex items-center gap-2">
+            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem] font-mono text-text-dim border border-surface1 shrink-0">4</span>
+            <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#89dceb]">answers: the upstream bottleneck</span>
+          </span>
           <h3 class="text-[1.25rem] mt-2 mb-3">The refinery closes the gap upstream</h3>
           <p class="text-[0.875rem] text-text-muted max-w-[480px]">
             Signal to findings to decisions to briefs, with adversarial lenses applied
@@ -144,7 +153,10 @@ import Frame from './mock/Frame.astro';
       <!-- 5 · done proves itself · scoreboard view -->
       <div class="grid lg:grid-cols-2 gap-8 items-center">
         <div>
-          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#d4af37]">answers pain 3</span>
+          <span class="inline-flex items-center gap-2">
+            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem] font-mono text-text-dim border border-surface1 shrink-0">3</span>
+            <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#d4af37]">answers: unverified done</span>
+          </span>
           <h3 class="text-[1.25rem] mt-2 mb-3">Done that proves itself</h3>
           <p class="text-[0.875rem] text-text-muted max-w-[480px]">
             Gates are files on disk, checkable by anything that reads a directory. The
@@ -199,7 +211,7 @@ import Frame from './mock/Frame.astro';
           </div>
         </Frame>
         <div>
-          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#a6e3a1]">cost, answered</span>
+          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#a6e3a1]">answers: invisible cost</span>
           <h3 class="text-[1.25rem] mt-2 mb-3">An economics ledger nobody else has</h3>
           <p class="text-[0.875rem] text-text-muted max-w-[480px]">
             Cost and turns per session, per mode, per task. Where the time goes, which
