@@ -1,0 +1,63 @@
+/* Aubergine — the icon's native home: warm violet-black ground where
+   the Tiphareth aura (purple, magenta, fire, gold) emerges instead of
+   sitting. Warm white text, mauve as the working accent, gold intact. */
+
+html[data-theme="aubergine"] {
+  --color-crust: #161221;
+  --color-mantle: #1b1628;
+  --color-base: #211a30;
+  --color-surface0: #332a47;
+  --color-surface1: #473a5f;
+
+  --color-text-primary: #f9f6fc;
+  --color-text-secondary: #e9e2f1;
+  --color-text-muted: #b6abc9;
+  --color-text-dim: #8a7f9f;
+
+  --color-gold: #d4af37;
+}
+
+html[data-theme="aubergine"] body {
+  background: var(--color-crust);
+  background-image:
+    radial-gradient(ellipse 55% 38% at 12% 8%, rgba(203, 166, 247, 0.10), transparent 70%),
+    radial-gradient(ellipse 50% 42% at 88% 30%, rgba(245, 194, 231, 0.07), transparent 70%),
+    radial-gradient(ellipse 45% 35% at 50% 95%, rgba(212, 175, 55, 0.08), transparent 70%);
+  background-attachment: fixed;
+}
+
+html[data-theme="aubergine"] a:hover { color: var(--color-ctp-mauve); }
+
+html[data-theme="aubergine"] ::selection {
+  background: rgba(203, 166, 247, 0.24);
+  color: var(--color-text-primary);
+}
+
+html[data-theme="aubergine"] .glass-pane {
+  background: rgba(33, 26, 48, 0.72);
+  border-color: rgba(249, 246, 252, 0.13);
+}
+html[data-theme="aubergine"] .glass-card {
+  background: rgba(27, 22, 40, 0.60);
+  border-color: rgba(249, 246, 252, 0.12);
+}
+html[data-theme="aubergine"] .glass-card:hover {
+  border-color: rgba(249, 246, 252, 0.22);
+  background: rgba(27, 22, 40, 0.78);
+}
+
+html[data-theme="aubergine"] .continuum-rule {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(203, 166, 247, 0.40) 20%,
+    rgba(212, 175, 55, 0.75) 50%,
+    rgba(245, 194, 231, 0.38) 80%,
+    transparent 100%
+  );
+}
+
+html[data-theme="aubergine"] .code-block {
+  background: var(--color-mantle);
+  border-color: rgba(249, 246, 252, 0.09);
+}

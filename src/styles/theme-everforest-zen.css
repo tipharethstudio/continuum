@@ -1,31 +1,24 @@
-/* Everforest Zen — alternative identity for the Continuum landing.
-   Derived from ~/.config/zed/themes/everforest-zen-zen.json:
-   the accents stay (they are shared with Catppuccin in that theme);
-   the ground changes: forest-dark surfaces, cream text, sage muted,
-   green as the working accent. Loaded AFTER globals.css, it overrides
-   the tokens; remove the import in BaseLayout to fall back to
-   Catppuccin. Nothing in globals.css is touched. */
+/* Everforest Zen — forest ground, cream text, green accent working.
+   Scoped to html[data-theme="everforest"]; the floating picker in
+   BaseLayout switches themes live. globals.css (Catppuccin) is the
+   unscoped base every theme falls back to. */
 
-:root {
-  /* Ground: forest dark, warm, no blue undertone */
+html[data-theme="everforest"] {
   --color-crust: #171a16;
   --color-mantle: #1d211d;
   --color-base: #252a23;
   --color-surface0: #333929;
   --color-surface1: #47503f;
 
-  /* Text: cream over forest, lifted so the room reads lit */
   --color-text-primary: #fcfaf2;
   --color-text-secondary: #efeada;
   --color-text-muted: #c9d4cb;
   --color-text-dim: #9faca2;
 
-  /* Gold stays: it is the brand, not the theme */
   --color-gold: #d4af37;
 }
 
-/* The ground itself: forest crust with green/teal/gold ambient wash */
-body {
+html[data-theme="everforest"] body {
   background: var(--color-crust);
   background-image:
     radial-gradient(ellipse 55% 38% at 12% 8%, rgba(166, 227, 161, 0.10), transparent 70%),
@@ -34,31 +27,27 @@ body {
   background-attachment: fixed;
 }
 
-/* Links breathe green here, not blue */
-a:hover { color: var(--color-ctp-green); }
+html[data-theme="everforest"] a:hover { color: var(--color-ctp-green); }
 
-::selection {
+html[data-theme="everforest"] ::selection {
   background: rgba(166, 227, 161, 0.22);
   color: var(--color-text-primary);
 }
 
-/* Glass over forest: same physics, warmer pane */
-.glass-pane {
+html[data-theme="everforest"] .glass-pane {
   background: rgba(38, 43, 36, 0.72);
   border-color: rgba(239, 233, 200, 0.14);
 }
-
-.glass-card {
+html[data-theme="everforest"] .glass-card {
   background: rgba(31, 35, 30, 0.60);
   border-color: rgba(239, 233, 200, 0.13);
 }
-.glass-card:hover {
+html[data-theme="everforest"] .glass-card:hover {
   border-color: rgba(239, 233, 200, 0.24);
   background: rgba(31, 35, 30, 0.78);
 }
 
-/* The signature hairline: green shoulders, gold center */
-.continuum-rule {
+html[data-theme="everforest"] .continuum-rule {
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -69,10 +58,12 @@ a:hover { color: var(--color-ctp-green); }
   );
 }
 
-.code-block {
+html[data-theme="everforest"] .code-block {
   background: var(--color-mantle);
-  border-color: rgba(228, 222, 185, 0.09);
+  border-color: rgba(239, 233, 200, 0.09);
 }
 
-::-webkit-scrollbar-thumb { background: rgba(228, 222, 185, 0.10); }
-::-webkit-scrollbar-thumb:hover { background: rgba(228, 222, 185, 0.18); }
+/* The everforest mark variant only makes sense on this ground */
+.mark-everforest { display: none; }
+html[data-theme="everforest"] .mark-default { display: none; }
+html[data-theme="everforest"] .mark-everforest { display: inline; }

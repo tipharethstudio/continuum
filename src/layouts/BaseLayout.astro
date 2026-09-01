@@ -2,7 +2,9 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
-import '../styles/theme-everforest-zen.css'; /* preview theme — remove this line to restore Catppuccin */
+import '../styles/theme-everforest-zen.css';
+import '../styles/theme-aubergine.css';
+import '../styles/theme-petrol.css';
 
 interface Props {
   title: string;
@@ -19,8 +21,12 @@ const canonical = new URL(Astro.url.pathname, site);
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="everforest">
   <head>
+    <script is:inline>
+      document.documentElement.dataset.theme =
+        localStorage.getItem('continuum-theme') || 'everforest';
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
@@ -45,5 +51,33 @@ const canonical = new URL(Astro.url.pathname, site);
       <slot />
     </main>
     <Footer />
+
+    <!-- Theme picker: preview instrument, remove before public launch of a final identity -->
+    <div class="fixed bottom-4 right-4 z-50 glass-pane px-3 py-2 flex items-center gap-2"
+         role="group" aria-label="Theme preview picker">
+      {[
+        ['catppuccin', '#1e1e2e', '#89b4fa'],
+        ['everforest', '#252a23', '#a6e3a1'],
+        ['aubergine', '#211a30', '#cba6f7'],
+        ['petrol', '#163036', '#94e2d5'],
+      ].map(([name, bg, dot]) => (
+        <button
+          class="theme-dot w-6 h-6 rounded-full border border-[rgba(255,255,255,0.25)] cursor-pointer"
+          style={`background: radial-gradient(circle at 35% 35%, ${dot} 0%, ${dot} 28%, ${bg} 34%)`}
+          data-set-theme={name}
+          title={name}
+          aria-label={`Switch to ${name} theme`}
+        ></button>
+      ))}
+    </div>
+    <script is:inline>
+      document.querySelectorAll('[data-set-theme]').forEach((b) =>
+        b.addEventListener('click', () => {
+          const t = b.dataset.setTheme;
+          document.documentElement.dataset.theme = t;
+          localStorage.setItem('continuum-theme', t);
+        })
+      );
+    </script>
   </body>
 </html>

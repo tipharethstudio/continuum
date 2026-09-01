@@ -1,0 +1,63 @@
+/* Petrol — deep teal ground, complementary to the icon's fire and
+   split-complementary to its magenta: the original mark vibrates here.
+   Cool near-white text, teal as the working accent, gold intact. */
+
+html[data-theme="petrol"] {
+  --color-crust: #0e1f24;
+  --color-mantle: #12262b;
+  --color-base: #163036;
+  --color-surface0: #24454d;
+  --color-surface1: #335a64;
+
+  --color-text-primary: #f4f9f7;
+  --color-text-secondary: #e0ebe8;
+  --color-text-muted: #a6c0bd;
+  --color-text-dim: #7c9793;
+
+  --color-gold: #d4af37;
+}
+
+html[data-theme="petrol"] body {
+  background: var(--color-crust);
+  background-image:
+    radial-gradient(ellipse 55% 38% at 12% 8%, rgba(148, 226, 213, 0.10), transparent 70%),
+    radial-gradient(ellipse 50% 42% at 88% 30%, rgba(137, 220, 235, 0.08), transparent 70%),
+    radial-gradient(ellipse 45% 35% at 50% 95%, rgba(212, 175, 55, 0.08), transparent 70%);
+  background-attachment: fixed;
+}
+
+html[data-theme="petrol"] a:hover { color: var(--color-ctp-teal); }
+
+html[data-theme="petrol"] ::selection {
+  background: rgba(148, 226, 213, 0.22);
+  color: var(--color-text-primary);
+}
+
+html[data-theme="petrol"] .glass-pane {
+  background: rgba(22, 48, 54, 0.72);
+  border-color: rgba(244, 249, 247, 0.13);
+}
+html[data-theme="petrol"] .glass-card {
+  background: rgba(18, 38, 43, 0.60);
+  border-color: rgba(244, 249, 247, 0.12);
+}
+html[data-theme="petrol"] .glass-card:hover {
+  border-color: rgba(244, 249, 247, 0.22);
+  background: rgba(18, 38, 43, 0.78);
+}
+
+html[data-theme="petrol"] .continuum-rule {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(148, 226, 213, 0.40) 20%,
+    rgba(212, 175, 55, 0.75) 50%,
+    rgba(137, 220, 235, 0.38) 80%,
+    transparent 100%
+  );
+}
+
+html[data-theme="petrol"] .code-block {
+  background: var(--color-mantle);
+  border-color: rgba(244, 249, 247, 0.09);
+}
