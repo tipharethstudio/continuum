@@ -8,17 +8,17 @@
 
 :root {
   /* Ground: forest dark, warm, no blue undertone */
-  --color-crust: #141613;
-  --color-mantle: #1a1d1b;
-  --color-base: #21251f;
-  --color-surface0: #2a2e38;
-  --color-surface1: #3a3f4e;
+  --color-crust: #171a16;
+  --color-mantle: #1d211d;
+  --color-base: #252a23;
+  --color-surface0: #333929;
+  --color-surface1: #47503f;
 
-  /* Text: cream over forest (from the theme's text / muted) */
-  --color-text-primary: #e4deb9;
-  --color-text-secondary: #d6d0b0;
-  --color-text-muted: #a5b4a9;
-  --color-text-dim: #7d8a80;
+  /* Text: cream over forest, lifted so the room reads lit */
+  --color-text-primary: #efe9c8;
+  --color-text-secondary: #ddd7b6;
+  --color-text-muted: #b7c4ba;
+  --color-text-dim: #8d9a90;
 
   /* Gold stays: it is the brand, not the theme */
   --color-gold: #d4af37;
@@ -28,9 +28,9 @@
 body {
   background: var(--color-crust);
   background-image:
-    radial-gradient(ellipse 55% 38% at 12% 8%, rgba(166, 227, 161, 0.06), transparent 70%),
-    radial-gradient(ellipse 50% 42% at 88% 30%, rgba(148, 226, 213, 0.05), transparent 70%),
-    radial-gradient(ellipse 45% 35% at 50% 95%, rgba(212, 175, 55, 0.045), transparent 70%);
+    radial-gradient(ellipse 55% 38% at 12% 8%, rgba(166, 227, 161, 0.10), transparent 70%),
+    radial-gradient(ellipse 50% 42% at 88% 30%, rgba(148, 226, 213, 0.08), transparent 70%),
+    radial-gradient(ellipse 45% 35% at 50% 95%, rgba(212, 175, 55, 0.08), transparent 70%);
   background-attachment: fixed;
 }
 
@@ -44,17 +44,17 @@ a:hover { color: var(--color-ctp-green); }
 
 /* Glass over forest: same physics, warmer pane */
 .glass-pane {
-  background: rgba(33, 37, 31, 0.72);
-  border-color: rgba(228, 222, 185, 0.09);
+  background: rgba(38, 43, 36, 0.72);
+  border-color: rgba(239, 233, 200, 0.14);
 }
 
 .glass-card {
-  background: rgba(26, 29, 27, 0.55);
-  border-color: rgba(228, 222, 185, 0.09);
+  background: rgba(31, 35, 30, 0.60);
+  border-color: rgba(239, 233, 200, 0.13);
 }
 .glass-card:hover {
-  border-color: rgba(228, 222, 185, 0.18);
-  background: rgba(26, 29, 27, 0.72);
+  border-color: rgba(239, 233, 200, 0.24);
+  background: rgba(31, 35, 30, 0.78);
 }
 
 /* The signature hairline: green shoulders, gold center */
@@ -62,9 +62,9 @@ a:hover { color: var(--color-ctp-green); }
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(166, 227, 161, 0.28) 20%,
-    rgba(212, 175, 55, 0.55) 50%,
-    rgba(148, 226, 213, 0.28) 80%,
+    rgba(166, 227, 161, 0.40) 20%,
+    rgba(212, 175, 55, 0.75) 50%,
+    rgba(148, 226, 213, 0.40) 80%,
     transparent 100%
   );
 }
