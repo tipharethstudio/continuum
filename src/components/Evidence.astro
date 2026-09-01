@@ -1,58 +1,131 @@
 ---
-const stats = [
-  { n: '1,000+', d: 'tasks executed across multiple real organizations since 2025; the current ledger alone holds ~600 with full records', c: '#89b4fa' },
-  { n: '3,057', d: 'agent sessions recorded, each with its mode, its turn count and its cost (45,485 conversation turns in total)', c: '#cba6f7' },
-  { n: '0', d: 'human touches on a typical run: regent arbitrates the routine with a recorded rationale and escalates only what is genuinely yours', c: '#d4af37' },
-  { n: '~$2', d: 'agent spend for a full M-sized task, measured end to end from the ledger', c: '#a6e3a1' },
-];
+// Evidence argued by artifact, not by totals: the ledger, the scoreboard,
+// and the paper trail a task leaves behind. Anyone can claim a number;
+// Continuum's claim is that every number has a file behind it.
+
+const ledger = `<span class="text-text-dim"># task.yaml · the execution ledger, one per task</span>
+<span class="text-[#89b4fa]">task:</span> auth-token-rotation
+<span class="text-[#89b4fa]">mode:</span> DONE        <span class="text-[#89b4fa]">branch:</span> task/auth-token-rotation
+<span class="text-[#89b4fa]">sessions:</span>
+  - <span class="text-[#89dceb]">mode:</span> EXPLORING     <span class="text-[#89dceb]">turns:</span> 18  <span class="text-[#89dceb]">cost_usd:</span> 0.24
+  - <span class="text-[#89dceb]">mode:</span> RESEARCHING   <span class="text-[#89dceb]">turns:</span> 11  <span class="text-[#89dceb]">cost_usd:</span> 0.14
+  - <span class="text-[#89dceb]">mode:</span> PLANNING      <span class="text-[#89dceb]">turns:</span> 24  <span class="text-[#89dceb]">cost_usd:</span> 0.58
+  - <span class="text-[#89dceb]">mode:</span> IMPLEMENTING  <span class="text-[#89dceb]">turns:</span> 31  <span class="text-[#89dceb]">cost_usd:</span> 0.72
+  - <span class="text-[#89dceb]">mode:</span> VALIDATING    <span class="text-[#89dceb]">turns:</span> 12  <span class="text-[#89dceb]">cost_usd:</span> 0.30
+<span class="text-text-dim"># a full task, end to end: ~$2. where time and money go,</span>
+<span class="text-text-dim"># per mode, is a question with an answer.</span>`;
+
+const scoreboard = `<span class="text-text-dim">$</span> <span class="text-text-primary">regent scoreboard</span> idea-unify-auth
+<span class="text-text-dim">remote: origin/main · sha 91e74f7 · read 18:04Z</span>
+auth-shared-middleware      <span class="text-[#a6e3a1]">delivered</span>
+auth-token-rotation         <span class="text-[#a6e3a1]">delivered</span>
+auth-docs-runbook           <span class="text-[#fab387]">delivered-something-else</span>
+<span class="text-text-secondary">checked 8 of 9</span> · 1 could not be read
+<span class="text-[#d4af37]">(a gap, not a zero)</span>`;
+
+const trail = `tasks/auth-token-rotation/
+├── brief.md          <span class="text-text-dim">what was asked, exactly</span>
+├── exploration.md    <span class="text-text-dim">the gate that opened RESEARCHING</span>
+├── research.md       <span class="text-text-dim">…that opened PLANNING</span>
+├── plan.md · todo.md <span class="text-text-dim">…that opened IMPLEMENTING</span>
+├── validation.md     <span class="text-text-dim">what "done" was defined to mean</span>
+└── sessions/*.jsonl  <span class="text-text-dim">every session: turns, cost, events</span>`;
 ---
 
 <section id="evidence" class="py-8 md:py-14 px-6 relative scroll-mt-14">
   <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
   <div class="max-w-7xl mx-auto">
     <span class="eyebrow mb-4 block" style="color: #d4af37;">Evidence</span>
-    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[620px] mb-4">
-      Measured, not projected.
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[640px] mb-4">
+      The proof is a file you can open.
     </h2>
-    <p class="text-text-muted max-w-[620px] mb-12">
-      Continuum was built by its first user and has run his working life since 2025:
-      his own products, client work inside a real enterprise engagement, and the studio
-      behind it (Tiphareth Studio). The numbers below come out of the system's own
-      ledger, because recording them is one of the things it does.
+    <p class="text-text-muted max-w-[640px] mb-12">
+      Anyone can put a big number on a landing page. Continuum's claim is stronger and
+      easier to check: every task run since 2025 (own products, a real enterprise
+      engagement, the studio behind it) left artifacts behind, because the artifacts
+      <strong>are the mechanism</strong>. Verify progress with nothing more exotic than
+      reading a directory.
     </p>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-      {stats.map((s) => (
-        <div class="glass-card p-6">
-          <div class="font-mono text-[2rem] font-semibold text-text-primary" style={`color:${s.c}`}>{s.n}</div>
-          <p class="text-[0.78125rem] text-text-muted mt-2 leading-relaxed">{s.d}</p>
+    <div class="grid lg:grid-cols-2 gap-4 mb-4">
+      <!-- The ledger -->
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#89b4fa]"></span>
+          <h3 class="text-[0.9375rem]">The ledger: cost is recorded, not estimated</h3>
         </div>
-      ))}
+        <div class="code-block"><pre><code set:html={ledger} /></pre></div>
+        <p class="mt-3 text-[0.78125rem] text-text-muted">
+          Which mode is expensive, whether a task was badly sized, where the week
+          actually went: answered from the ledger, not from memory. A supervisor can be
+          wrong about their own system and find out.
+        </p>
+      </div>
+
+      <!-- The scoreboard -->
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#d4af37]"></span>
+          <h3 class="text-[0.9375rem]">The scoreboard: done is read off the remote</h3>
+        </div>
+        <div class="code-block"><pre><code set:html={scoreboard} /></pre></div>
+        <p class="mt-3 text-[0.78125rem] text-text-muted">
+          Delivery verdicts are computed against the remote ref, never the local
+          checkout, headed by the sha and when it was read. A task that publishes
+          "done" against the evidence gets flagged, and an unreadable check reports
+          as a gap instead of quietly passing.
+        </p>
+      </div>
     </div>
 
-    <div class="glass-pane p-6 md:p-8 grid md:grid-cols-[1fr_auto] gap-6 items-center">
-      <div>
-        <h3 class="text-[1.0625rem] mb-2">The reference run</h3>
-        <p class="text-[0.875rem] text-text-muted max-w-[640px]">
-          One captured signal went in. Out came 17 findings, 9 decisions, 22 executable
-          briefs and 22 GitHub issues. A signal is usually a few lines; the refinery
-          does the expanding, and a typical run completes without the human touching it
-          at all. When a decision is genuinely yours (scope, a fact only you know, an
-          outward-facing effect) the run escalates it and every arbitration in between
-          is recorded with its rationale.
+    <div class="grid lg:grid-cols-2 gap-4 mb-10">
+      <!-- The paper trail -->
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#a6e3a1]"></span>
+          <h3 class="text-[0.9375rem]">The record: a byproduct, not a chore</h3>
+        </div>
+        <div class="code-block"><pre><code set:html={trail} /></pre></div>
+        <p class="mt-3 text-[0.78125rem] text-text-muted">
+          By the time a task finishes it holds a written account of its own reasoning.
+          None of it was produced as documentation; each file existed because it was
+          the gate that let the next mode begin.
         </p>
-        <p class="mt-3 text-[0.8125rem] italic text-text-secondary border-l-2 border-[rgba(212,175,55,0.5)] pl-4 max-w-[640px]">
+      </div>
+
+      <!-- The reference run -->
+      <div class="glass-card p-6 flex flex-col">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#cba6f7]"></span>
+          <h3 class="text-[0.9375rem]">One run, end to end</h3>
+        </div>
+        <p class="text-[0.8125rem] text-text-muted">
+          One captured signal, a few lines long, went in. Out came 17 findings, 9
+          decisions, 22 executable briefs and 22 GitHub issues; the refinery did the
+          expanding. A typical run completes without the human touching it at all:
+          regent arbitrates the routine with a recorded rationale, and escalates only
+          a scope call, a fact only you know, or an outward-facing effect.
+        </p>
+        <div class="mt-4 font-mono text-[0.6875rem] text-text-dim leading-loose">
+          <span>signal</span>
+          <span class="text-surface1"> ── </span><span class="text-[#89dceb]">17 findings</span>
+          <span class="text-surface1"> ── </span><span class="text-[#89b4fa]">9 decisions</span>
+          <span class="text-surface1"> ── </span><span class="text-[#cba6f7]">22 briefs</span>
+          <span class="text-surface1"> ── </span><span class="text-[#a6e3a1]">22 issues</span>
+        </div>
+        <p class="mt-auto pt-4 text-[0.8125rem] italic text-text-secondary border-l-2 border-[rgba(212,175,55,0.5)] pl-4">
           "This abstraction let me abstract from every detail and participate only where
           I was actually needed."
         </p>
       </div>
-      <div class="font-mono text-[0.6875rem] text-text-dim leading-loose whitespace-nowrap">
-        <div>signal <span class="text-surface1">──</span> <span class="text-[#89dceb]">17 findings</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-surface1">──</span> <span class="text-[#89b4fa]">9 decisions</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-surface1">──</span> <span class="text-[#cba6f7]">22 briefs</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-surface1">──</span> <span class="text-[#a6e3a1]">22 issues</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-surface1">──</span> <span class="text-[#d4af37]">touched by exception</span></div>
-      </div>
+    </div>
+
+    <!-- The totals, demoted to a footnote strip -->
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-mono text-[0.6875rem] text-text-dim">
+      <span>in production since 2025</span>
+      <span>1,000+ tasks across multiple real organizations</span>
+      <span>3,057 recorded sessions · 45,485 turns</span>
+      <span>every figure from the system's own ledger</span>
     </div>
   </div>
 </section>
