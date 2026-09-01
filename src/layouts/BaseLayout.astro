@@ -5,6 +5,7 @@ import '../styles/globals.css';
 import '../styles/theme-everforest-zen.css';
 import '../styles/theme-aubergine.css';
 import '../styles/theme-petrol.css';
+import '../styles/theme-espresso.css';
 
 interface Props {
   title: string;
@@ -60,6 +61,7 @@ const canonical = new URL(Astro.url.pathname, site);
         ['everforest', '#252a23', '#a6e3a1'],
         ['aubergine', '#211a30', '#cba6f7'],
         ['petrol', '#163036', '#94e2d5'],
+        ['espresso', '#27211d', '#fab387'],
       ].map(([name, bg, dot]) => (
         <button
           class="theme-dot w-6 h-6 rounded-full border border-[rgba(255,255,255,0.25)] cursor-pointer"
