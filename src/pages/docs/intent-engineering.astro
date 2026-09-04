@@ -1,0 +1,234 @@
+---
+// The discipline, briefly, and where each of its claims becomes a mechanism.
+// The essay carries the long argument; this page carries the mapping, and
+// every claim gets one figure that states it geometrically.
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import FigDemand from '../../components/figures/FigDemand.astro';
+import FigSession from '../../components/figures/FigSession.astro';
+import FigJudgment from '../../components/figures/FigJudgment.astro';
+import FigDone from '../../components/figures/FigDone.astro';
+import FigState from '../../components/figures/FigState.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const proof = `${base}/proof/presidio-input-side-pii-scrub`;
+---
+
+<DocsLayout
+  title="Intent Engineering"
+  eyebrow="The discipline"
+  color="#cba6f7"
+  intro="A layer has opened above the editor. Its input is raw intent, its output is code verified on the remote, and the discipline in between is deciding what deserves a person. This page is the short version and the mapping: five claims, and the mechanism where Continuum makes each one checkable."
+>
+  <div class="glass-pane p-6 md:p-8 mb-16">
+    <p class="text-[0.9375rem] text-text-secondary leading-relaxed max-w-[680px]">
+      Writing code stopped being the scarce input. Well-formed intention became it. The
+      work that decides an outcome now happens before an agent starts, turning demand into
+      something executable, and after it stops, proving that what came back is what was
+      asked for. Intent Engineering is the name for that work. Continuum is a workstation
+      built for it, which means every claim below has to be a mechanism, not a belief.
+    </p>
+    <p class="mt-4 font-mono text-[0.75rem]">
+      <a href="https://daviguides.github.io/articles/machine-learning/2026/04/25/intent-engineering.html"
+         class="text-[#89b4fa] hover:text-text-primary">The founding essay, for the long argument →</a>
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-16">
+
+    <!-- 1 -->
+    <section class="movement">
+      <div class="claim-head">
+        <span class="claim-n">1</span>
+        <h2>Demand arrives malformed.</h2>
+      </div>
+      <p class="claim-body">
+        A thread, a meeting, a feeling that a release is risky. None of it is executable.
+        Turning it into ordered work is hours of unassisted thinking, and it is where the
+        day actually goes.
+      </p>
+      <figure>
+        <div class="fig-pane glass-pane">
+          <FigDemand />
+        </div>
+        <figcaption>Refinement adds no material. It gives the same four things an order, and each one an acceptance criterion.</figcaption>
+      </figure>
+      <p class="claim-does">
+        <strong>What Continuum does about it.</strong> A captured signal is explored into
+        findings, findings are resolved into decisions, decisions are written out as briefs
+        a competent stranger could execute: what is in scope, what is not, what done means,
+        what it waits for.
+      </p>
+      <p class="claim-where">
+        <a href={`${base}/docs/how-it-works/`}>the line, stage by stage →</a>
+        <span class="sep">·</span>
+        <a href={`${proof}/brief.md`}>a real brief →</a>
+      </p>
+    </section>
+
+    <!-- 2 -->
+    <section class="movement">
+      <div class="claim-head">
+        <span class="claim-n">2</span>
+        <h2>The session is not the unit of work.</h2>
+      </div>
+      <p class="claim-body">
+        A context window fills and the understanding built inside it ends. Anything that
+        treats the conversation as the container loses the work when the container closes.
+      </p>
+      <figure>
+        <div class="fig-pane glass-pane">
+          <FigSession />
+        </div>
+        <figcaption>The task crosses every break because each stage wrote down what the next one needs before it was allowed to open. The session is disposable by design; what it wrote down is not.</figcaption>
+      </figure>
+      <p class="claim-does">
+        <strong>What Continuum does about it.</strong> The task is the unit. It moves
+        through named stages, and each stage must leave a file on disk before the next may
+        open. The next session resumes from files, not from memory.
+      </p>
+      <p class="claim-where">
+        <a href={`${proof}/`}>what a task leaves behind →</a>
+        <span class="sep">·</span>
+        <a href={`${base}/docs/how-it-works/`}>modes and gates →</a>
+      </p>
+    </section>
+
+    <!-- 3 -->
+    <section class="movement">
+      <div class="claim-head">
+        <span class="claim-n">3</span>
+        <h2>Judgment does not delegate. It concentrates.</h2>
+      </div>
+      <p class="claim-body">
+        More agents do not need less supervision. They need supervision worth interrupting
+        a person for. Everything else has to be decided without you, and be inspectable
+        afterwards.
+      </p>
+      <figure>
+        <div class="fig-pane glass-pane">
+          <FigJudgment />
+        </div>
+        <figcaption>Three kinds of decision cross to a person. Every other call is made with its criterion recorded and a link that reopens the exact moment: supervision scales by spending less judgment, not by delegating it.</figcaption>
+      </figure>
+      <p class="claim-does">
+        <strong>What Continuum does about it.</strong> A scope call, a fact only you know,
+        an outward-facing effect: those stop and wait, and reach you as a message. The rest
+        moves, and leaves a receipt you can disagree with after lunch.
+      </p>
+      <p class="claim-where">
+        <a href={`${base}/#rails`}>the rails →</a>
+        <span class="sep">·</span>
+        <a href={`${base}/docs/vocabulary/`}>receipts, defined →</a>
+      </p>
+    </section>
+
+    <!-- 4 -->
+    <section class="movement">
+      <div class="claim-head">
+        <span class="claim-n">4</span>
+        <h2>Done is a claim until something checks it.</h2>
+      </div>
+      <p class="claim-body">
+        An agent that says it finished and an agent that finished look identical from the
+        inside. Trust has to be replaced by a reading of something the agent does not
+        control.
+      </p>
+      <figure>
+        <div class="fig-pane glass-pane">
+          <FigDone />
+        </div>
+        <figcaption>The two reports are identical; only one of them was measured against something the agent does not control. What could not be read reports as a gap, not as a pass.</figcaption>
+      </figure>
+      <p class="claim-does">
+        <strong>What Continuum does about it.</strong> The verdict for a task comes from
+        origin, never from the local checkout and never from the agent's own report. A
+        task that publishes "done" against the evidence gets flagged instead of shipped.
+      </p>
+      <p class="claim-where">
+        <a href={`${proof}/task.yaml`}>a real ledger →</a>
+        <span class="sep">·</span>
+        <a href={`${base}/docs/evidence/`}>the scoreboard →</a>
+      </p>
+    </section>
+
+    <!-- 5 -->
+    <section class="movement">
+      <div class="claim-head">
+        <span class="claim-n">5</span>
+        <h2>Context is the artifact. Code is the byproduct.</h2>
+      </div>
+      <p class="claim-body">
+        If the reasoning lives in a vendor's database, the work dies with the vendor. If it
+        lives beside the code, it outlives every session, branch, machine and model that
+        touched it.
+      </p>
+      <figure>
+        <div class="fig-pane glass-pane">
+          <FigState />
+        </div>
+        <figcaption>Everything inside the box comes with a clone. Everything outside it can be replaced without the work losing anything.</figcaption>
+      </figure>
+      <p class="claim-does">
+        <strong>What Continuum does about it.</strong> The path on disk is the structure:
+        initiative, milestone, task. Anything that can read a directory can verify progress,
+        including you, including a year from now.
+      </p>
+      <p class="claim-where">
+        <a href={`${base}/docs/architecture/`}>three planes →</a>
+      </p>
+    </section>
+
+  </div>
+
+  <div class="glass-card p-6 mt-16">
+    <span class="eyebrow block mb-3" style="color:#94e2d5;">Where it goes next</span>
+    <p class="text-[0.875rem] text-text-muted max-w-[680px]">
+      The discipline is older than the tooling: people have been doing this by hand, badly,
+      since the first agent finished a task nobody checked. What Continuum adds is that
+      each of the five claims above is something a directory can prove. Read
+      <a href={`${base}/docs/how-it-works/`} class="text-text-secondary hover:text-text-primary">how the line runs</a>,
+      or open <a href={`${proof}/`} class="text-text-secondary hover:text-text-primary">one real task</a> and
+      check the claims against it.
+    </p>
+  </div>
+</DocsLayout>
+
+<style>
+  /* Figure token contract. The surface is dark in both themes, so ink
+     inherits the body text colour and accent is the page's own gold. */
+  .movement {
+    --fig-ink: var(--color-text-muted, #a6adc8);
+    --fig-accent: #d4af37;
+    --fig-muted: var(--color-text-dim, #7f849c);
+    --fig-label-font: 'Fira Code', ui-monospace, monospace;
+  }
+
+  .claim-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+  .claim-n {
+    width: 1.25rem; height: 1.25rem; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--color-surface1, #45475a); border-radius: 4px;
+    font-family: 'Fira Code', monospace; font-size: 0.6875rem;
+    color: var(--color-text-dim, #7f849c);
+  }
+  .claim-head h2 { font-size: 1.25rem; line-height: 1.15; margin: 0; }
+
+  .claim-body { font-size: 0.9375rem; color: var(--color-text-secondary, #bac2de); max-width: 66ch; }
+
+  .movement figure { margin: 1.75rem 0 1.25rem; }
+  .fig-pane { padding: 1.5rem 1.25rem; }
+  @media (min-width: 768px) { .fig-pane { padding: 2rem 1.75rem; } }
+  .movement figure :global(svg.fig) { width: 100%; height: auto; display: block; }
+  .movement figcaption {
+    margin-top: 0.75rem; font-size: 0.8125rem; color: var(--color-text-muted, #a6adc8);
+    max-width: 70ch; border-left: 2px solid rgba(212, 175, 55, 0.5); padding-left: 0.875rem;
+  }
+
+  .claim-does { font-size: 0.875rem; color: var(--color-text-muted, #a6adc8); max-width: 70ch; }
+  .claim-does strong { color: var(--color-text-primary, #cdd6f4); font-weight: 600; }
+
+  .claim-where { margin-top: 0.625rem; font-family: 'Fira Code', monospace; font-size: 0.6875rem; }
+  .claim-where a { color: var(--color-text-dim, #7f849c); }
+  .claim-where a:hover { color: var(--color-text-primary, #cdd6f4); }
+  .claim-where .sep { color: var(--color-surface1, #45475a); margin: 0 0.5rem; }
+</style>

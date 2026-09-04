@@ -1,0 +1,95 @@
+---
+// Beat 4 · one real task travels the line. Every figure below is read
+// from tasks/presidio-input-side-pii-scrub/task.yaml (the-saurus, 2026-07-31).
+import Frame from '../mock/Frame.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const proof = `${base}/proof/presidio-input-side-pii-scrub`;
+const L = (f: string) => `${proof}/${f}`;
+
+const stops = [
+  { t: 'in', color: '#f9e2af', head: 'A two-line ask lands', body: '"Scrub emails, phones and addresses from raw paragraph text before markdown, without redacting author names." That is the whole input.' },
+  { t: 'brief', color: '#89dceb', head: 'It comes back as a brief', body: 'Goal, what is in and out of scope, the one file to change, three success criteria a stranger could check. 5 turns, $0.34.' },
+  { t: 'queue', color: '#cba6f7', head: 'It waits its turn', body: 'The queue runs as many tasks at once as you set, in dependency order. Something blocked stays blocked instead of being started twice.' },
+  { t: 'run', color: '#a6e3a1', head: 'It leaves a file at every step', body: 'It works in stages, and each stage leaves a file before the next may start. If it stalls, you open the file that stopped it. Each stage is a fresh Claude Code session in its own checkout. The receipt is below.' },
+  { t: 'verified', color: '#d4af37', head: 'Done means origin says so', body: 'PR #125 squash-merged, issue #117 moved, branch deleted. The verdict is read off the remote, not off the agent\'s notes.' },
+];
+---
+
+<section id="line" class="py-10 md:py-16 px-6 relative scroll-mt-14">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 -right-1/4 w-[700px] h-[700px] rounded-full opacity-[0.10]"
+         style="background: radial-gradient(circle, #94e2d5 0%, transparent 70%);"></div>
+    <div class="absolute bottom-0 -left-1/4 w-[600px] h-[500px] rounded-full opacity-[0.08]"
+         style="background: radial-gradient(circle, #a6e3a1 0%, transparent 70%);"></div>
+  </div>
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #94e2d5;">How it runs</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[680px] mb-4">
+      One task, end to end. A real one.
+    </h2>
+    <p class="text-text-muted max-w-[600px] mb-10">
+      Every signal rides the same line: in, brief, queue, run, verified. Here is
+      <span class="font-mono text-[0.8125rem] text-text-secondary">presidio-input-side-pii-scrub</span>,
+      as it happened on 31 July 2026, with its numbers from the file it left behind.
+    </p>
+
+    <div class="grid lg:grid-cols-[1fr_1fr] gap-8 items-start">
+      <ol class="flex flex-col gap-4">
+        {stops.map((s, i) => (
+          <li class="glass-card p-5 flex gap-4">
+            <span class="stage-chip shrink-0 h-fit" style={`color:${s.color};border-color:${s.color}66;background:${s.color}0f`}>{s.t.toUpperCase()}</span>
+            <div>
+              <div class="text-[0.9375rem] font-display font-semibold text-text-primary">{s.head}</div>
+              <p class="mt-1 text-[0.8125rem] text-text-muted">{s.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <div class="flex flex-col gap-4 lg:sticky lg:top-20">
+        <Frame title="tasks/presidio-input-side-pii-scrub/" meta="what it left behind · every line is a real file" accent="#a6e3a1">
+          <div class="font-mono text-[0.6875rem] leading-loose text-text-muted">
+            <div>├── <a href={L('brief.md')} class="text-text-secondary hover:text-text-primary">brief.md</a>          <span class="text-text-dim">what was asked, exactly</span></div>
+            <div>├── <a href={L('exploration.md')} class="text-text-secondary hover:text-text-primary">exploration.md</a>    <span class="text-text-dim">opened research</span></div>
+            <div>├── <a href={L('research.md')} class="text-text-secondary hover:text-text-primary">research.md</a>       <span class="text-text-dim">opened planning</span></div>
+            <div>├── <a href={L('plan.md')} class="text-text-secondary hover:text-text-primary">plan.md</a> · <a href={L('todo.md')} class="text-text-secondary hover:text-text-primary">todo.md</a> <span class="text-text-dim">opened implementing</span></div>
+            <div>├── <a href={L('validation.md')} class="text-text-secondary hover:text-text-primary">validation.md</a>     <span class="text-text-dim">what "done" was defined to mean</span></div>
+            <div>├── <a href={L('pr.md')} class="text-text-secondary hover:text-text-primary">pr.md</a>             <span class="text-text-dim">PR #125</span></div>
+            <div>├── <a href={L('sessions/2026-07-31T16-48-28.jsonl')} class="text-text-secondary hover:text-text-primary">sessions/*.jsonl</a>  <span class="text-text-dim">every turn, every cost</span></div>
+            <div>└── <a href={L('task.yaml')} class="text-text-secondary hover:text-text-primary">task.yaml</a>         <span class="text-text-dim">the ledger</span></div>
+          </div>
+        </Frame>
+        <Frame title="Cost by stage" meta="from task.yaml · recorded, not estimated" accent="#d4af37">
+          <div class="font-mono text-[0.6875rem] flex flex-col gap-2">
+            {[
+              ['brief', 6, '#f9e2af', '$0.34'],
+              ['exploring', 14, '#89dceb', '$0.71'],
+              ['researching', 13, '#89b4fa', '$0.70'],
+              ['planning', 11, '#cba6f7', '$0.59'],
+              ['implementing', 33, '#a6e3a1', '$1.70'],
+              ['validating', 22, '#d4af37', '$1.17'],
+            ].map(([mode, w, c, cost]) => (
+              <div class="flex items-center gap-3">
+                <span class="w-[6.5rem] text-text-dim shrink-0">{mode}</span>
+                <span class="h-2 rounded-full" style={`width:${w}%;background:${c};opacity:.75`}></span>
+                <span class="text-text-muted">{cost}</span>
+              </div>
+            ))}
+            <div class="flex items-center gap-3 pt-1 border-t border-[rgba(255,255,255,0.06)]">
+              <span class="w-[6.5rem] text-text-secondary shrink-0">task total</span>
+              <span class="text-[#d4af37]">$5.23 · 86 turns</span>
+            </div>
+          </div>
+        </Frame>
+        <p class="font-mono text-[0.625rem] text-text-dim px-1">
+          Every file above is public, unedited. Read the brief that was written before the code,
+          then the validation that was written before "done".
+          <a href={`${proof}/`} class="text-text-muted hover:text-text-primary">Open the directory →</a>
+          <span class="mx-1">·</span>
+          <a href={`${base}/docs/how-it-works/`} class="text-text-muted hover:text-text-primary">how it works →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

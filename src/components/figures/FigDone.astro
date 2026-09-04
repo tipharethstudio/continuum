@@ -1,0 +1,50 @@
+---
+// Claim 4 · done is a claim until something checks it.
+// Geometry: instrument-vs-none. Both reports are real and identical; the
+// asymmetry is the instrument under one of them, never an empty frame.
+---
+
+<svg class="fig" viewBox="0 0 620 188" fill="none" xmlns="http://www.w3.org/2000/svg"
+     role="img"
+     aria-label="Two identical reports of done resting on one shared baseline. Under the left one, a gauge reading the remote ref, the sha and the instant it was read; under the right one, nothing at all. The asymmetry is in the instrument, not in the report.">
+
+  <!-- INVARIANT: both shapes are the SAME size (114 x 44) and sit on the SAME
+       baseline (y=126): an agent that finished and an agent that says it
+       finished are indistinguishable from the report alone.
+       DO NOT draw the right side as an empty frame. The right report is real
+       and present; what is missing is the gauge below the baseline. -->
+
+  <g font-family="var(--fig-label-font, 'Fira Code', monospace)" font-size="11.5">
+
+    <!-- shared baseline: this is what makes it one claim instead of two pictures -->
+    <line x1="40" y1="126" x2="580" y2="126" stroke="var(--fig-ink, currentColor)" stroke-width="1" opacity="0.45"/>
+
+    <!-- ==== left: the same report, with an instrument under it ==== -->
+    <rect x="76" y="82" width="114" height="44" rx="6"
+          stroke="var(--fig-ink, currentColor)" stroke-width="1.1" opacity="0.75"
+          fill="var(--fig-ink, currentColor)" fill-opacity="0.06"/>
+    <text x="133" y="109" text-anchor="middle" fill="var(--fig-ink, currentColor)" opacity="0.9">status: done</text>
+    <text x="133" y="60" text-anchor="middle" fill="var(--fig-accent, #d4af37)">checked against the remote</text>
+
+    <g stroke="var(--fig-accent, #d4af37)" stroke-width="1.1" opacity="0.85">
+      <line x1="76"  y1="126" x2="76"  y2="142"/>
+      <line x1="133" y1="126" x2="133" y2="142"/>
+      <line x1="190" y1="126" x2="190" y2="142"/>
+      <line x1="76"  y1="142" x2="190" y2="142"/>
+    </g>
+    <g font-size="10.5" fill="var(--fig-accent, #d4af37)" opacity="0.9">
+      <text x="76" y="162">origin/main</text>
+      <text x="76" y="178">sha 91e74f7 · read 18:04Z</text>
+    </g>
+
+    <!-- ==== right: the same report, no instrument ==== -->
+    <rect x="416" y="82" width="114" height="44" rx="6"
+          stroke="var(--fig-ink, currentColor)" stroke-width="1.1" opacity="0.75"
+          fill="var(--fig-ink, currentColor)" fill-opacity="0.06"/>
+    <text x="473" y="109" text-anchor="middle" fill="var(--fig-ink, currentColor)" opacity="0.9">status: done</text>
+    <text x="473" y="60" text-anchor="middle" fill="var(--fig-ink, currentColor)" opacity="0.8">the agent's own notes</text>
+
+    <!-- deliberately nothing below the baseline on this side -->
+    <text x="416" y="162" font-size="10.5" fill="var(--fig-ink, currentColor)" opacity="0.55">nothing under it to read</text>
+  </g>
+</svg>

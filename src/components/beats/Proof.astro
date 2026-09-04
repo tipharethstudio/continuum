@@ -1,0 +1,91 @@
+---
+// Beat 6 · proof you can open. The directory is public; the page quotes it.
+// TRACTION_LINE stays honest until the commercial engagement is cleared.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const proof = `${base}/proof/presidio-input-side-pii-scrub`;
+
+const ledger = `<span class="text-text-dim"># task.yaml · presidio-input-side-pii-scrub · unedited</span>
+<span class="text-[#89b4fa]">status:</span> done        <span class="text-[#89b4fa]">pr:</span> 125   <span class="text-[#89b4fa]">issue:</span> 117
+<span class="text-[#89b4fa]">last_action:</span> 'Squash-merged PR #125. Issue #117 → In Review. Deleted remote branch.'
+<span class="text-[#89b4fa]">sessions:</span>
+  - <span class="text-[#89dceb]">mode:</span> EXPLORING     <span class="text-[#89dceb]">turns:</span> 19  <span class="text-[#89dceb]">cost_usd:</span> 0.7143
+  - <span class="text-[#89dceb]">mode:</span> RESEARCHING   <span class="text-[#89dceb]">turns:</span> 13  <span class="text-[#89dceb]">cost_usd:</span> 0.7039
+  - <span class="text-[#89dceb]">mode:</span> PLANNING      <span class="text-[#89dceb]">turns:</span> 7   <span class="text-[#89dceb]">cost_usd:</span> 0.5935
+  - <span class="text-[#89dceb]">mode:</span> IMPLEMENTING  <span class="text-[#89dceb]">turns:</span> 28  <span class="text-[#89dceb]">cost_usd:</span> 1.7037
+  - <span class="text-[#89dceb]">mode:</span> VALIDATING    <span class="text-[#89dceb]">turns:</span> 14  <span class="text-[#89dceb]">cost_usd:</span> 1.1695
+<span class="text-[#89b4fa]">validation_verdict:</span> approved`;
+
+const validation = `<span class="text-text-dim"># validation.md · what "done" was defined to mean, then checked</span>
+| Criterion                                  | Verification                          |
+| Emails/phones/addresses redacted;          | TestPiiScrub asserts markers appear;  |
+|   author names preserved                   |   result.authors still intact         |
+| Redaction logged, PII value never logged   | caplog test: type + index, no value   |
+| Pipeline continues; no paper dropped       | paragraph count unchanged             |
+
+<span class="text-text-dim">## Pass bar — actual results</span>
+<span class="text-[#a6e3a1]">[x]</span> TestPiiScrub 8/8 passed
+<span class="text-[#a6e3a1]">[x]</span> tests/test_ingestion.py 33/33 passed
+<span class="text-[#a6e3a1]">[x]</span> full suite 344 passed, 1 failed (pre-existing Hypothesis flake, unrelated)`;
+---
+
+<section id="proof" class="py-10 md:py-16 px-6 relative scroll-mt-14">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 -right-1/5 w-[700px] h-[600px] rounded-full opacity-[0.10]"
+         style="background: radial-gradient(circle, #d4af37 0%, transparent 70%);"></div>
+    <div class="absolute bottom-0 -left-1/4 w-[600px] h-[500px] rounded-full opacity-[0.08]"
+         style="background: radial-gradient(circle, #89b4fa 0%, transparent 70%);"></div>
+  </div>
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #d4af37;">Proof</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[640px] mb-4">
+      Don't take the page's word. Open the file.
+    </h2>
+    <p class="text-text-muted max-w-[640px] mb-10">
+      The whole directory is here, unedited: the brief, every stage file, every session
+      log, the ledger.
+      <a href={`${proof}/`} class="font-mono text-[0.8125rem] text-[#d4af37] hover:text-[#e0c15c]">Open the directory →</a>
+    </p>
+
+    <div class="grid lg:grid-cols-2 gap-4 mb-8">
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#89b4fa]"></span>
+          <h3 class="text-[0.9375rem]">The ledger: cost is recorded, not estimated</h3>
+        </div>
+        <div class="code-block"><pre><code set:html={ledger} /></pre></div>
+        <p class="mt-3 text-[0.75rem] text-text-dim font-mono">
+          The last_action line was written by reading origin, not by asking the agent.
+          <a href={`${proof}/task.yaml`} class="text-text-muted hover:text-text-primary">task.yaml →</a>
+        </p>
+      </div>
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#a6e3a1]"></span>
+          <h3 class="text-[0.9375rem]">The check: "done" was written down before it was claimed</h3>
+        </div>
+        <div class="code-block"><pre><code set:html={validation} /></pre></div>
+        <p class="mt-3 text-[0.75rem] text-text-dim font-mono">
+          <a href={`${proof}/validation.md`} class="text-text-muted hover:text-text-primary">validation.md →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="glass-card p-6 mb-8 max-w-[760px]">
+      <div class="font-mono text-[0.625rem] uppercase tracking-wider text-[#a6e3a1] mb-2">Where it has run</div>
+      <p class="text-[0.875rem] text-text-muted">
+        Six of our own repositories and one commercial engagement, since 2025. More than a
+        thousand tasks, each with a directory like the one above. The commercial engagement
+        is not yet cleared for publication; ask and we will say what we can on the call.
+        Before any of this existed, thirteen agents ran in parallel here by hand;
+        <a href="https://daviguides.github.io/articles/machine-learning/2026/03/28/thirteen-agents-postmortem.html" class="text-text-secondary hover:text-text-primary">the postmortem</a>
+        is where the rails come from.
+      </p>
+    </div>
+
+    <p class="font-mono text-[0.6875rem] text-text-dim">
+      3,057 sessions and 45,485 turns, counted from the task.yaml files across six repositories.
+      <a href={`${base}/docs/evidence/`} class="text-text-muted hover:text-text-primary">more evidence →</a>
+    </p>
+  </div>
+</section>

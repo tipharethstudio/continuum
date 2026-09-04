@@ -1,0 +1,70 @@
+task: presidio-input-side-pii-scrub
+summary: Redact emails/phones/addresses from raw paragraph text pre-markdown, preserving
+  author names for citations.
+milestone: m2-ingestion-pii-chunking
+branch: feature/presidio-input-side-pii-scrub
+worktree: .worktrees/presidio-input-side-pii-scrub
+workflow: self-implementation
+mode: VALIDATING
+status: done
+priority: P2
+size: M
+created: '2026-07-31'
+last_action: 'Squash-merged PR #125. Issue #117 → In Review. Deleted remote branch.'
+next_steps: null
+blockers: null
+key_context: []
+notes: []
+sessions:
+- session_id: 115b1439-ff07-4075-8b5c-0fabcd0d1cbc
+  mode: BRIEFING
+  cost_usd: 0.3412
+  turns: 5
+  artifacts:
+  - brief.md
+  timestamp: '2026-07-31T16:49:11Z'
+- session_id: 115b1439-ff07-4075-8b5c-0fabcd0d1cbc
+  mode: EXPLORING
+  cost_usd: 0.7143
+  turns: 19
+  artifacts:
+  - exploration.md
+  timestamp: '2026-07-31T16:52:28Z'
+  continues_session: true
+- session_id: 115b1439-ff07-4075-8b5c-0fabcd0d1cbc
+  mode: RESEARCHING
+  cost_usd: 0.7039
+  turns: 13
+  artifacts:
+  - research.md
+  timestamp: '2026-07-31T16:59:37Z'
+  continues_session: true
+- session_id: 115b1439-ff07-4075-8b5c-0fabcd0d1cbc
+  mode: PLANNING
+  cost_usd: 0.5935
+  turns: 7
+  artifacts:
+  - plan.md
+  - todo.md
+  - validation.md
+  timestamp: '2026-07-31T17:03:25Z'
+  continues_session: true
+- session_id: 115b1439-ff07-4075-8b5c-0fabcd0d1cbc
+  mode: IMPLEMENTING
+  cost_usd: 1.7037
+  turns: 28
+  artifacts: []
+  timestamp: '2026-07-31T17:23:46Z'
+  continues_session: true
+- session_id: 115b1439-ff07-4075-8b5c-0fabcd0d1cbc
+  mode: VALIDATING
+  cost_usd: 1.1695
+  turns: 14
+  artifacts:
+  - validation-complete
+  timestamp: '2026-07-31T17:40:31Z'
+  continues_session: true
+queue_watching: true
+issue: 117
+validation_verdict: approved
+pr: 125

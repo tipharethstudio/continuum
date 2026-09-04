@@ -1,0 +1,32 @@
+---
+// Coda · after the ask, before the footer. The thesis as a signature, not
+// as a second climax: whoever is converted has already left; whoever read
+// this far gets the argument, and a door into the docs page that maps it.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<section id="thesis" class="pb-14 px-6 relative">
+  <div class="max-w-7xl mx-auto">
+    <div class="continuum-rule mb-10"></div>
+    <div class="max-w-[720px] mx-auto text-center">
+      <span class="eyebrow block mb-4" style="color:#cba6f7;">The thesis, if you stayed</span>
+      <p class="text-[1.0625rem] text-text-secondary leading-relaxed">
+        <strong class="text-text-primary">Intent is the input. Code is a byproduct.</strong>
+        A layer has opened above the editor: its input is raw intent, its output is code
+        verified on the remote, and the discipline in between is deciding what deserves
+        you. We call that layer <strong class="text-text-primary">Intent Engineering</strong>.
+        Continuum is a workstation for it.
+      </p>
+      <p class="mt-5 text-[0.8438rem] text-text-muted">
+        Five claims, and the mechanism where each one stops being a belief: that is the
+        short version. The essay is the long one.
+      </p>
+      <p class="mt-4 font-mono text-[0.75rem]">
+        <a href={`${base}/docs/intent-engineering/`} class="text-[#cba6f7] hover:text-text-primary">The discipline, and how this applies it →</a>
+        <span class="text-text-dim"> · </span>
+        <a href="https://daviguides.github.io/articles/machine-learning/2026/04/25/intent-engineering.html"
+           class="text-[#89b4fa] hover:text-text-primary">The founding essay →</a>
+      </p>
+    </div>
+  </div>
+</section>

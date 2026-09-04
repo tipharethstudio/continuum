@@ -1,24 +1,32 @@
 ---
+// The landing page is a story in nine beats and ends on the ask. The
+// machinery it points at lives under /docs; nothing that used to be here
+// left the site.
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import Problem from '../components/Problem.astro';
-import Distill from '../components/Distill.astro';
-import Features from '../components/Features.astro';
-import Architecture from '../components/Architecture.astro';
-import Evidence from '../components/Evidence.astro';
-import Shipped from '../components/Shipped.astro';
-import Faq from '../components/Faq.astro';
-import Closing from '../components/Closing.astro';
+import Hero from '../components/beats/Hero.astro';
+import Pain from '../components/beats/Pain.astro';
+import After from '../components/beats/After.astro';
+import Line from '../components/beats/Line.astro';
+import Rails from '../components/beats/Rails.astro';
+import Proof from '../components/beats/Proof.astro';
+import Standing from '../components/beats/Standing.astro';
+import Questions from '../components/beats/Questions.astro';
+import Ask from '../components/beats/Ask.astro';
+import Coda from '../components/beats/Coda.astro';
 ---
 
-<BaseLayout title="Continuum · A Workstation for Intent Engineering">
+<BaseLayout
+  title="Continuum · You paste the thread. You go to lunch."
+  description="A desktop workstation above your editor and your agents: a thread, a meeting note, an idea on the way out becomes ordered tasks, runs on the agents you already use, and is done only when the commit is on your remote."
+>
   <Hero />
-  <Problem />
-  <Distill />
-  <Features />
-  <Architecture />
-  <Evidence />
-  <Shipped />
-  <Faq />
-  <Closing />
+  <Pain />
+  <After />
+  <Line />
+  <Rails />
+  <Proof />
+  <Standing />
+  <Questions />
+  <Ask />
+  <Coda />
 </BaseLayout>

@@ -1,0 +1,47 @@
+---
+// Beat 7 · where it stands. The reader-facing beat before the questions:
+// what a lead already gets, what is closed, what is open, and that there
+// is no free tier.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<section id="standing" class="py-10 md:py-16 px-6 relative scroll-mt-14">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute -bottom-1/4 -left-1/4 w-[700px] h-[700px] rounded-full opacity-[0.10]"
+         style="background: radial-gradient(circle, #cba6f7 0%, transparent 70%);"></div>
+  </div>
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #cba6f7;">Where it stands</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[640px] mb-10">
+      What is already on disk for a lead.
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <p class="text-[0.9375rem] text-text-secondary leading-relaxed">
+          Every task writes its cost per stage, every routine decision with its reason, and
+          a verdict read off origin. One engineer runs the line today. Team mode puts those
+          files on one screen; the first pilots are deciding what that screen shows first.
+        </p>
+        <p class="mt-3 text-[0.8125rem] text-text-muted">
+          No database: state is YAML and markdown in your git, which is why a task outlives
+          a session, a branch, a machine, and the model vendor underneath.
+          <a href={`${base}/docs/how-it-works/`} class="font-mono text-[0.75rem] text-text-dim hover:text-text-primary">How it works →</a>
+        </p>
+      </div>
+      <div class="glass-card p-6">
+        <p class="text-[0.9375rem] text-text-secondary leading-relaxed">
+          Continuum is closed and in early access. The behavioural standards it runs its
+          agents under are open source and already used by other developers in their
+          editors. If you want to see how the agents on this line are made to behave,
+          start there.
+        </p>
+        <p class="mt-3 text-[0.8125rem] text-text-muted">
+          There is no free tier and there will not be one.
+          <a href={`${base}/docs/gradients/`} class="font-mono text-[0.75rem] text-text-dim hover:text-text-primary">The standards →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -41,7 +41,10 @@
 @layer base {
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  /* Ambient glows are no longer clipped per section, so they can bleed
+     across boundaries and blend. The page itself does the clipping, on
+     both elements: body alone still lets the root grow. */
+  html { scroll-behavior: smooth; overflow-x: clip; }
 
   body {
     font-family: var(--font-body);

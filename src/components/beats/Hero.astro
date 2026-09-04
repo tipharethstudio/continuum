@@ -1,0 +1,152 @@
+---
+// Beat 1 · the hook, as a scene from the reader's day.
+// The mock is the one screen strangers understand: one row per signal.
+// When a recorded run exists, set VIDEO_URL and the mock yields to it.
+const VIDEO_URL = '';
+
+const rows = [
+  {
+    signal: 'mon 09:10 · slack: "checkout retries are silently swallowed"',
+    stages: ['captured', 'refined', '4 briefs', 'queued', 'implementing'],
+    state: 'running',
+  },
+  {
+    signal: 'tue 11:40 · meeting: Q3 metrics dashboard for the board',
+    stages: ['captured', 'refined', '7 briefs', 'queued', 'verified'],
+    state: 'done',
+  },
+  {
+    signal: 'wed 17:48 · idea: unify auth across the two APIs',
+    stages: ['captured', 'refining'],
+    state: 'needs-you',
+  },
+];
+
+const chipStyle: Record<string, string> = {
+  captured: 'color:#f9e2af;border-color:rgba(249,226,175,.4);background:rgba(249,226,175,.06)',
+  refined: 'color:#89dceb;border-color:rgba(137,220,235,.4);background:rgba(137,220,235,.06)',
+  refining: 'color:#89dceb;border-color:rgba(137,220,235,.4);background:rgba(137,220,235,.06)',
+  queued: 'color:#cba6f7;border-color:rgba(203,166,247,.4);background:rgba(203,166,247,.06)',
+  implementing: 'color:#a6e3a1;border-color:rgba(166,227,161,.4);background:rgba(166,227,161,.06)',
+  verified: 'color:#d4af37;border-color:rgba(212,175,55,.5);background:rgba(212,175,55,.08)',
+};
+const briefStyle = 'color:#89b4fa;border-color:rgba(137,180,250,.4);background:rgba(137,180,250,.06)';
+---
+
+<section class="relative">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-1/4 -left-1/4 w-[700px] h-[700px] rounded-full opacity-[0.14]"
+         style="background: radial-gradient(circle, #89b4fa 0%, transparent 70%);"></div>
+    <div class="absolute -top-1/4 right-0 w-[800px] h-[800px] rounded-full opacity-[0.12]"
+         style="background: radial-gradient(circle, #cba6f7 0%, transparent 70%);"></div>
+    <div class="absolute bottom-10 left-1/3 w-[700px] h-[500px] rounded-full opacity-[0.10]"
+         style="background: radial-gradient(ellipse at center, #d4af37 0%, transparent 65%);"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-20">
+    <div class="animate-emerge mb-8">
+      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[0.6875rem] font-mono glass-card text-text-muted">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#a6e3a1] breathing"></span>
+        Daily-driven since 2025 · macOS · single operator · team mode in pilot
+      </span>
+    </div>
+
+    <div class="grid lg:grid-cols-[1fr_1.05fr] gap-12 items-center">
+      <div>
+        <h1 class="text-[2.6rem] md:text-[3.3rem] lg:text-[3.6rem] leading-[1.02] animate-emerge" style="animation-delay: 100ms;">
+          You paste the thread.<br />
+          <span class="relative inline-block">You go to lunch.
+            <svg class="absolute -bottom-1.5 left-0 w-full h-[3px]" viewBox="0 0 100 3" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="0" y1="1.5" x2="100" y2="1.5" stroke="url(#hero-grad)" stroke-width="2.5" />
+              <defs>
+                <linearGradient id="hero-grad" x1="0" x2="100" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#89b4fa" />
+                  <stop offset="50%" stop-color="#d4af37" />
+                  <stop offset="100%" stop-color="#cba6f7" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </h1>
+
+        <p class="mt-7 text-lg text-text-secondary max-w-[560px] animate-emerge" style="animation-delay: 200ms;">
+          A Slack thread, a meeting note, an idea on the way out the door. Continuum turns it into
+          ordered tasks, runs the coding agents you already pay for on them, and calls
+          a task done only when the commit is on your remote. Your phone buzzes once:
+          for the one question only you can answer.
+        </p>
+
+        <p class="mt-4 text-[0.875rem] text-text-muted max-w-[520px] animate-emerge" style="animation-delay: 250ms;">
+          <span class="text-text-primary font-medium">Not another AI coding IDE.</span>
+          It sits above your editor and your agents, and drives Claude Code today. Keep both.
+          The alternative is five Claude Code sessions in tmux, with you as their scheduler.
+        </p>
+
+        <p class="mt-3 text-[0.875rem] text-text-muted max-w-[520px] animate-emerge" style="animation-delay: 300ms;">
+          One engineer runs it today. What a lead needs is already written to disk by every
+          task. Putting that on one screen is what the first pilots are shaping.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3 animate-emerge" style="animation-delay: 350ms;">
+          <a href="#proof"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[0.8125rem] font-medium bg-text-primary text-crust hover:bg-text-secondary transition-colors">
+            See a real task
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </a>
+          <a href="#ask"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[0.8125rem] border border-surface1 text-text-secondary hover:border-text-dim hover:text-text-primary transition-all">
+            Early access
+          </a>
+        </div>
+      </div>
+
+      <div class="animate-emerge" style="animation-delay: 400ms;">
+        {VIDEO_URL ? (
+          <div class="glass-pane p-2">
+            <video class="w-full rounded-lg" src={VIDEO_URL} controls muted playsinline preload="metadata"></video>
+            <p class="px-2 pt-2 font-mono text-[0.625rem] text-text-dim">one signal, unedited, capture to verified · 90s</p>
+          </div>
+        ) : (
+          <div class="glass-pane p-4 md:p-5">
+            <div class="flex items-center justify-between mb-4 px-1">
+              <span class="eyebrow" style="color:#89b4fa;">Your signals, this week</span>
+              <span class="font-mono text-[0.625rem] text-text-dim">one line each · in → verified</span>
+            </div>
+            <div class="flex flex-col gap-2.5">
+              {rows.map((row) => (
+                <div class="glass-card px-4 py-3">
+                  <div class="font-mono text-[0.71875rem] text-text-secondary truncate">{row.signal}</div>
+                  <div class="mt-2 flex items-center gap-1.5 flex-wrap">
+                    {row.stages.map((s, i) => (
+                      <>
+                        {i > 0 && <span class="text-surface1 font-mono text-[0.625rem]">·</span>}
+                        <span
+                          class={`stage-chip ${s === 'implementing' || s === 'refining' ? 'breathing' : ''}`}
+                          style={s.endsWith('briefs') ? briefStyle : chipStyle[s]}
+                        >{s.toUpperCase()}</span>
+                      </>
+                    ))}
+                    {row.state === 'needs-you' && (
+                      <span class="ml-auto stage-chip" style="color:#fab387;border-color:rgba(250,179,135,.5);background:rgba(250,179,135,.08)">
+                        NEEDS YOU
+                      </span>
+                    )}
+                    {row.state === 'done' && (
+                      <span class="ml-auto font-mono text-[0.625rem] text-[#d4af37]">✓ on the remote</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div class="mt-4 px-1 flex items-center justify-between font-mono text-[0.625rem] text-text-dim">
+              <span>stylized from the live surface</span>
+              <span class="text-[#fab387]">1 question waiting for you</span>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+  <div class="continuum-rule max-w-7xl mx-auto"></div>
+</section>

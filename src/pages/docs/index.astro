@@ -1,0 +1,46 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const pages = [
+  { href: `${base}/docs/intent-engineering/`, title: 'Intent Engineering', color: '#cba6f7', body: 'The discipline this workstation is built for: five claims about working above the editor, and the mechanism where each one becomes something a directory can prove.' },
+  { href: `${base}/docs/how-it-works/`, title: 'How it works', color: '#89b4fa', body: 'The line, stage by stage: capture, refine, briefs, queue, implement, verify. Then the six mechanisms that stop living in the operator, each with the surface that implements it.' },
+  { href: `${base}/docs/architecture/`, title: 'Architecture', color: '#cba6f7', body: 'Three planes. State is a file, not a claim. Why there is no database, no server and no account, and what that buys.' },
+  { href: `${base}/docs/evidence/`, title: 'Evidence', color: '#d4af37', body: 'The ledger, the scoreboard, the paper trail a task leaves behind, one run end to end, and the software shipped through the line.' },
+  { href: `${base}/docs/vocabulary/`, title: 'Vocabulary', color: '#94e2d5', body: 'Every named thing in Continuum, defined once: signal, brief, mode, gate, receipt, NEEDS YOU, ledger, scoreboard, regent, governor, substrate, gradient.' },
+  { href: `${base}/docs/gradients/`, title: 'Gradients', color: '#a6e3a1', body: 'The open-source behavioral standards layer: arché, shodo, kinhin, zazen. The part of Continuum you can run today.' },
+];
+---
+
+<DocsLayout
+  title="Continuum, in full"
+  eyebrow="Docs"
+  color="#d4af37"
+  intro="The landing page is the short answer. This is the long one: how the line runs, what it is made of, and how to check it."
+>
+  <div class="grid md:grid-cols-2 gap-4 mb-14">
+    {pages.map((p) => (
+      <a href={p.href} class="glass-card p-5 flex flex-col gap-2 group">
+        <span class="eyebrow" style={`color:${p.color};`}>{p.title}</span>
+        <p class="text-[0.8125rem] text-text-muted">{p.body}</p>
+        <span class="mt-auto pt-1 font-mono text-[0.625rem] text-text-dim group-hover:text-text-muted">read →</span>
+      </a>
+    ))}
+  </div>
+
+  <div class="glass-card p-6 mb-14">
+    <span class="eyebrow block mb-3" style="color:#f38ba8;">Compared to</span>
+    <p class="text-[0.875rem] text-text-muted max-w-[680px]">
+      Cursor, Claude Code and Copilot write the code. Devin, Factory and OpenHands run the
+      task and report back that it is done. Continuum does not compete with either: it
+      writes the task they run, keeps the state in your git instead of their sandbox, and
+      refuses to take their word for done until the commit is on your remote. Five Claude
+      Code sessions in tmux do the same work with you as the scheduler; that is the
+      comparison that matters.
+    </p>
+  </div>
+
+  <p class="font-mono text-[0.6875rem] text-text-dim">
+    Questions people ask before they ask: on the <a href={`${base}/#faq`} class="text-text-muted hover:text-text-primary">landing page →</a>
+  </p>
+</DocsLayout>

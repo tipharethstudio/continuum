@@ -1,0 +1,50 @@
+---
+// Claim 1 · demand arrives malformed.
+// Geometry: same-points-two-routes. The refined version is not more material
+// than the raw one, it is the same material with an order.
+---
+
+<svg class="fig" viewBox="0 0 620 172" fill="none" xmlns="http://www.w3.org/2000/svg"
+     role="img"
+     aria-label="The same four pieces of demand drawn twice: above, three crossing paths through them with no order and no way in; below, the same four points on one line, numbered in dependency order, with the first one marked as the place work starts.">
+
+  <!-- INVARIANT: the four points sit at EXACTLY the same x in both rows
+       (60, 240, 420, 570). Refinement adds no material, only a route.
+       Three crossing paths, not two: a pair of gentle waves reads as
+       ambience rather than as tangle. -->
+
+  <g font-family="var(--fig-label-font, 'Fira Code', monospace)" font-size="11.5">
+
+    <text x="40" y="26" fill="var(--fig-ink, currentColor)" opacity="0.85">a thread, a meeting note, an idea on the way out</text>
+
+    <g stroke="var(--fig-ink, currentColor)" stroke-width="1.1" opacity="0.55">
+      <path d="M60 62 C130 30 180 78 240 44 C310 22 350 76 420 48 C500 20 550 70 570 56"/>
+      <path d="M62 44 C130 80 200 32 250 74 C320 100 360 34 430 72 C510 96 545 46 570 68"/>
+      <path d="M60 54 C150 54 190 76 268 48 C350 24 390 74 452 54 C520 38 548 62 570 60"/>
+    </g>
+    <g stroke="var(--fig-ink, currentColor)" stroke-width="1.1" opacity="0.8">
+      <circle cx="60"  cy="62" r="3.4"/>
+      <circle cx="240" cy="44" r="3.4"/>
+      <circle cx="420" cy="48" r="3.4"/>
+      <circle cx="570" cy="56" r="3.4"/>
+    </g>
+
+    <text x="40" y="116" fill="var(--fig-accent, #d4af37)">the same four things, in dependency order</text>
+
+    <line x1="60" y1="140" x2="570" y2="140"
+          stroke="var(--fig-ink, currentColor)" stroke-width="1" opacity="0.5"/>
+    <g stroke="var(--fig-accent, #d4af37)" stroke-width="1.3" opacity="0.9"
+       fill="var(--fig-accent, #d4af37)" fill-opacity="0.16">
+      <circle cx="60"  cy="140" r="4.4"/>
+      <circle cx="240" cy="140" r="4.4"/>
+      <circle cx="420" cy="140" r="4.4"/>
+      <circle cx="570" cy="140" r="4.4"/>
+    </g>
+    <g font-size="10" fill="var(--fig-accent, #d4af37)" opacity="0.9" text-anchor="middle">
+      <text x="60"  y="162">1</text>
+      <text x="240" y="162">2</text>
+      <text x="420" y="162">3</text>
+      <text x="570" y="162">4</text>
+    </g>
+  </g>
+</svg>

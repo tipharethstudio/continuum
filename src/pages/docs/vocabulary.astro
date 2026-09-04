@@ -1,0 +1,81 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+// Every named thing on the site, defined once. The landing page uses the
+// first group; everything else lives here and in the docs.
+const groups = [
+  {
+    title: 'On the landing page',
+    color: '#89b4fa',
+    terms: [
+      ['signal', 'A raw piece of demand: a Slack thread, a meeting note, an alert, an idea on the way out the door. It carries no obligation when captured.'],
+      ['brief', 'A task specification a competent stranger could execute: what is asked, acceptance criteria, dependency order, workflow mode.'],
+      ['the line', 'The whole path from a captured signal to verified delivery: capture, refine, briefs, queue, implement, verify. One line per signal.'],
+      ['queue', 'Work waiting to run, with priorities and dependencies, resolved in topological order under a WIP limit you set.'],
+      ['NEEDS YOU', 'The short list of decisions that cross to a human: a product or scope call, a fact only you know, an outward-facing effect.'],
+      ['receipt', 'The record of a decision taken in your name: the action, the object, the criterion used, and a deep link that reopens the exact session.'],
+      ['verified', 'Done as read off the remote ref, never the local checkout, headed by the sha and when it was read. An unreadable check reports as a gap, not a zero.'],
+      ['ledger', 'The per-task record of cost and turns per session, per mode. Recorded, not estimated.'],
+    ],
+  },
+  {
+    title: 'Inside the line',
+    color: '#cba6f7',
+    terms: [
+      ['refinery', 'The interactive stage where a signal becomes findings, findings become decisions, and decisions become briefs, with adversarial lenses applied while it can still fix what it wrote.'],
+      ['lenses', 'Adversarial checks run over the refinery\'s own output before briefs are egested: scope, granularity, dependency, testability.'],
+      ['egest', 'The refinery\'s last step: writing briefs out as files for the orchestration plane.'],
+      ['prepare governor', 'The process that drives the prepare domain: capture through briefs, escalating only NEEDS YOU decisions.'],
+      ['regent', 'The supervisor process that orchestrates intake, refiner, instrument and the runner; arbitrates routine calls with a recorded rationale; computes the delivery scoreboard.'],
+      ['arbitrate', 'What regent does with everything that is not NEEDS YOU: decide, record the criterion, leave a receipt.'],
+      ['scoreboard', 'The delivery verdict per task, computed against the remote: delivered, delivered-something-else, or unreadable (a gap).'],
+    ],
+  },
+  {
+    title: 'Inside a task',
+    color: '#a6e3a1',
+    terms: [
+      ['mode', 'One of the named phases a task moves through: EXPLORING, RESEARCHING, PLANNING, IMPLEMENTING, VALIDATING, FINALIZING.'],
+      ['gate', 'The artifact on disk that must exist before the next mode opens: exploration.md opens RESEARCHING, research.md opens PLANNING, plan.md and todo.md open IMPLEMENTING, validation.md opens VALIDATING.'],
+      ['session', 'One bounded run of an agent inside a mode. Disposable by design; the task is not.'],
+      ['hook', 'Deterministic steps around a session: rebase before, commit and push after, state written back to task.yaml.'],
+      ['worktree', 'The isolated git checkout a task runs in, one per task branch.'],
+      ['task.yaml', 'The execution ledger for one task: mode, branch, sessions with turns and cost.'],
+    ],
+  },
+  {
+    title: 'Around the line',
+    color: '#94e2d5',
+    terms: [
+      ['plane', 'One of three layers: the context plane refines demand into briefs, the orchestration plane executes tasks through gated modes, the substrate is where execution happens.'],
+      ['substrate', 'A place where execution happens: a laptop, a node, a rented GPU. Continuum runs on substrates; macOS is one substrate and one viewport.'],
+      ['gradient', 'A Claude Code plugin carrying behavioral or code standards: arché, shodo, kinhin, zazen. Open source.'],
+      ['Intent Distill', 'The desktop surface that shows the line: one row per signal, capture through verified, with the NEEDS YOU queue and receipts.'],
+      ['Intent Engineering', 'The discipline of the layer above the editor: turning raw demand into executable briefs and verifying what came back. Continuum is its workstation.'],
+    ],
+  },
+];
+---
+
+<DocsLayout
+  title="Vocabulary"
+  eyebrow="Every named thing, once"
+  color="#94e2d5"
+  intro="Continuum names its parts. The landing page uses eight of them; the rest live here."
+>
+  <div class="flex flex-col gap-10">
+    {groups.map((g) => (
+      <section>
+        <span class="eyebrow mb-4 block" style={`color:${g.color};`}>{g.title}</span>
+        <dl class="grid md:grid-cols-[180px_1fr] gap-x-6 gap-y-3 text-[0.8438rem]">
+          {g.terms.map(([t, d]) => (
+            <>
+              <dt class="font-mono text-text-primary">{t}</dt>
+              <dd class="text-text-muted max-w-[70ch]">{d}</dd>
+            </>
+          ))}
+        </dl>
+      </section>
+    ))}
+  </div>
+</DocsLayout>

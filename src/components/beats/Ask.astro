@@ -1,0 +1,39 @@
+---
+// Beat 9 · the ask, the last screen. Pilot price and the ask channel are
+// owner decisions still pending: the copy stays neutral on both and the
+// button target is the current contact link.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const CONTACT_HREF = 'https://www.linkedin.com/in/daviguides/';
+const proof = `${base}/proof/presidio-input-side-pii-scrub`;
+---
+
+<section id="ask" class="py-14 md:py-24 px-6 relative scroll-mt-14">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] opacity-[0.12]"
+         style="background: radial-gradient(ellipse at center bottom, #d4af37 0%, transparent 65%);"></div>
+  </div>
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <div class="text-center max-w-[640px] mx-auto">
+      <h2 class="text-[1.75rem] md:text-[2.25rem] mb-4">One repo. Two weeks.<br />One thread you have been avoiding.</h2>
+      <p class="text-text-muted text-[0.9375rem] mb-8">
+        Continuum is daily-driven and being hardened for its first outside users. A pilot
+        is one repository, your existing agents and subscription, and a real backlog. At
+        the end you keep every brief, receipt and merge, whether or not you keep Continuum.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href={CONTACT_HREF}
+           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-[0.875rem] font-medium bg-[#d4af37] text-crust hover:bg-[#e0c15c] transition-colors">
+          Ask for early access
+        </a>
+        <a href={`${proof}/`}
+           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-[0.875rem] border border-surface1 text-text-secondary hover:border-text-dim hover:text-text-primary transition-all">
+          Open the task directory
+        </a>
+      </div>
+      <p class="mt-4 text-[0.75rem] italic text-text-muted">
+        macOS today. No server, no account, nothing to stand up.
+      </p>
+    </div>
+  </div>
+</section>

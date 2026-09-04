@@ -1,0 +1,48 @@
+---
+// Beat 5 · what reaches you, and what it never does.
+// The objection answered inside the story, before any mention of hooks or pushes.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<section id="rails" class="py-10 md:py-16 px-6 relative scroll-mt-14">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 -left-1/5 w-[600px] h-[600px] rounded-full opacity-[0.09]"
+         style="background: radial-gradient(circle, #fab387 0%, transparent 70%);"></div>
+  </div>
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #fab387;">The rails</span>
+    <h2 class="text-[1.875rem] md:text-[2.5rem] max-w-[680px] mb-10">
+      What reaches you. What it never does.
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <div class="font-mono text-[0.6875rem] text-[#fab387] mb-3">NEEDS YOU · only three things</div>
+        <ul class="text-[0.875rem] text-text-secondary flex flex-col gap-2">
+          <li><span class="text-text-primary font-medium">A scope call.</span> Split this in two, or keep one?</li>
+          <li><span class="text-text-primary font-medium">A fact only you know.</span> Which of these two APIs is the one customers hit?</li>
+          <li><span class="text-text-primary font-medium">An outward-facing effect.</span> Anything that would reach a customer, a vendor, or main.</li>
+        </ul>
+        <p class="mt-4 text-[0.8125rem] text-text-muted">
+          The question reaches you as a Telegram message; you answer there or in the
+          terminal. Everything else is decided for you, with the reason written down and
+          a link that reopens the exact moment. You can disagree after lunch.
+        </p>
+      </div>
+      <div class="glass-card p-6">
+        <div class="font-mono text-[0.6875rem] text-[#a6e3a1] mb-3">Never, without you</div>
+        <ul class="text-[0.875rem] text-text-secondary flex flex-col gap-2">
+          <li><span class="text-text-primary font-medium">Never works on main.</span> Each task runs on its own branch, in its own checkout, and pushes it so nothing is lost.</li>
+          <li><span class="text-text-primary font-medium">Merges only what passed.</span> A task is squash-merged into the branch it was cut from after its own validation passed, and the combined tree is checked again. Releases, deploys and anything that reaches a customer wait for you.</li>
+          <li><span class="text-text-primary font-medium">Never spends past the limit you set.</span> How many tasks run at once is a number, not a habit.</li>
+        </ul>
+        <p class="mt-4 text-[0.8125rem] text-text-muted">
+          It runs on your machine, on the model subscription you already have. No server,
+          no account, no copy of your code anywhere new.
+          <a href={`${base}/docs/architecture/`} class="text-text-dim hover:text-text-primary font-mono text-[0.75rem]">architecture →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

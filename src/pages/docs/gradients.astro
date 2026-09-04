@@ -1,0 +1,33 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+const gradients = [
+  { name: 'arché', what: 'Behavioral principles for Claude Code: research before action, respect the user\'s mode, execute to completion, done means the requirement.', color: '#d4af37' },
+  { name: 'shodo', what: 'Code standards: how a file, a function and a CLI are written so a stranger can read them.', color: '#89b4fa' },
+  { name: 'kinhin', what: 'Test-driven principles: the test is the gate, the gate is a file.', color: '#a6e3a1' },
+  { name: 'zazen', what: 'The Zen of Python, applied: simple beats clever, explicit beats implicit, in practice.', color: '#94e2d5' },
+];
+---
+
+<DocsLayout
+  title="Gradients"
+  eyebrow="The open door"
+  color="#a6e3a1"
+  intro="The behavioral standards layer is open source and already in use by other developers. It is the part of Continuum you can run today: the standards every agent on the line works under, packaged as Claude Code plugins."
+>
+  <div class="grid md:grid-cols-2 gap-4 mb-10">
+    {gradients.map((g) => (
+      <div class="glass-card p-5">
+        <span class="font-mono text-[0.875rem]" style={`color:${g.color};`}>{g.name}</span>
+        <p class="mt-2 text-[0.8125rem] text-text-muted">{g.what}</p>
+      </div>
+    ))}
+  </div>
+
+  <p class="text-[0.875rem] text-text-muted max-w-[640px] mb-4">
+    Model-agnostic by construction: capability improves monotonically, discipline
+    oscillates per release. Modes, gates and per-model strictness insulate the workflow
+    from vendor variance. The gradients are where that discipline is written down.
+  </p>
+  <a href="https://github.com/daviguides" class="text-[0.8125rem] font-mono text-[#a6e3a1]">On GitHub →</a>
+</DocsLayout>

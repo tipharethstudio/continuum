@@ -1,0 +1,54 @@
+---
+// Claim 5 · context is the artifact, code is the byproduct.
+// Geometry: containment-hierarchy. What is inside the repository outlives
+// every run; what is outside it is replaceable, and drawn outside on purpose.
+---
+
+<svg class="fig" viewBox="0 0 620 212" fill="none" xmlns="http://www.w3.org/2000/svg"
+     role="img"
+     aria-label="A box labelled your git holds two siblings, the source and the work state written as YAML and markdown, and the work state holds one directory per task. Outside the box, tied to it by a dashed line, sit the session and the model vendor, because they are chosen for each run and replaced without the work losing anything.">
+
+  <!-- INVARIANT: containment is literal nesting; every child rectangle is
+       fully inside its parent's bounds. The two things that are NOT part of
+       the stored model are drawn OUTSIDE the box, joined by a dashed line
+       rather than an arrow. That placement is the whole point: keep the
+       outsiders outside. -->
+
+  <g font-family="var(--fig-label-font, 'Fira Code', monospace)" font-size="11.5">
+
+    <!-- ==== the repository ==== -->
+    <rect x="20" y="30" width="420" height="176" rx="10"
+          stroke="var(--fig-accent, #d4af37)" stroke-width="1.2" opacity="0.85" fill="none"/>
+    <text x="34" y="52" fill="var(--fig-accent, #d4af37)">your git</text>
+
+    <!-- sibling A: the code -->
+    <rect x="36" y="66" width="150" height="124" rx="8"
+          stroke="var(--fig-ink, currentColor)" stroke-width="1" opacity="0.5" fill="none"/>
+    <text x="48" y="88" fill="var(--fig-ink, currentColor)" opacity="0.85">the source</text>
+    <text x="48" y="112" font-size="10.5" fill="var(--fig-ink, currentColor)" opacity="0.6">the byproduct</text>
+
+    <!-- sibling B: the work state -->
+    <rect x="200" y="66" width="224" height="124" rx="8"
+          stroke="var(--fig-accent, #d4af37)" stroke-width="1" opacity="0.7" fill="none"/>
+    <text x="212" y="88" fill="var(--fig-accent, #d4af37)">the work state</text>
+    <text x="212" y="108" font-size="10.5" fill="var(--fig-accent, #d4af37)" opacity="0.75">YAML and markdown, no database</text>
+
+    <rect x="212" y="122" width="200" height="56" rx="6"
+          stroke="var(--fig-accent, #d4af37)" stroke-width="1" opacity="0.6"
+          fill="var(--fig-accent, #d4af37)" fill-opacity="0.08"/>
+    <text x="224" y="142" font-size="10.5" fill="var(--fig-accent, #d4af37)" opacity="0.9">one directory per task</text>
+    <text x="224" y="162" font-size="10.5" fill="var(--fig-accent, #d4af37)" opacity="0.7">brief, stages, ledger</text>
+
+    <!-- ==== the outsiders: chosen per run, replaced without loss ==== -->
+    <line x1="440" y1="118" x2="482" y2="118"
+          stroke="var(--fig-ink, currentColor)" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+
+    <rect x="482" y="70" width="118" height="44" rx="8"
+          stroke="var(--fig-ink, currentColor)" stroke-width="1.1" opacity="0.65" fill="none"/>
+    <text x="494" y="97" font-size="10.5" fill="var(--fig-ink, currentColor)" opacity="0.8">the session</text>
+
+    <rect x="482" y="124" width="118" height="44" rx="8"
+          stroke="var(--fig-ink, currentColor)" stroke-width="1.1" opacity="0.65" fill="none"/>
+    <text x="494" y="151" font-size="10.5" fill="var(--fig-ink, currentColor)" opacity="0.8">the model vendor</text>
+  </g>
+</svg>

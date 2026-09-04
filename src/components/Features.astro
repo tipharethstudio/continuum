@@ -5,7 +5,7 @@
 import Frame from './mock/Frame.astro';
 ---
 
-<section id="features" class="py-8 md:py-14 px-6 relative overflow-hidden scroll-mt-14">
+<section id="features" class="py-8 md:py-14 px-6 relative scroll-mt-14">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div class="absolute top-0 -right-1/4 w-[700px] h-[700px] rounded-full opacity-[0.10]"
          style="background: radial-gradient(circle, #94e2d5 0%, transparent 70%);"></div>
@@ -95,7 +95,10 @@ import Frame from './mock/Frame.astro';
       <!-- 3 · limit that holds · queue -->
       <div class="grid lg:grid-cols-2 gap-8 items-center">
         <div>
-          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#cba6f7]">wip is a number you set</span>
+          <span class="inline-flex items-center gap-2">
+            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem] font-mono text-text-dim border border-surface1 shrink-0">3</span>
+            <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#cba6f7]">wip is a number you set</span>
+          </span>
           <h3 class="text-[1.25rem] mt-2 mb-3">A limit that actually holds</h3>
           <p class="text-[0.875rem] text-text-muted max-w-[480px]">
             Work waiting to run is a queue with priorities and dependencies, resolved in
@@ -162,7 +165,7 @@ import Frame from './mock/Frame.astro';
       <div class="grid lg:grid-cols-2 gap-8 items-center">
         <div>
           <span class="inline-flex items-center gap-2">
-            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem] font-mono text-text-dim border border-surface1 shrink-0">3</span>
+            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem] font-mono text-text-dim border border-surface1 shrink-0">5</span>
             <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#d4af37]">answers: unverified done</span>
           </span>
           <h3 class="text-[1.25rem] mt-2 mb-3">Done that proves itself</h3>
@@ -219,7 +222,10 @@ import Frame from './mock/Frame.astro';
           </div>
         </Frame>
         <div>
-          <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#a6e3a1]">cost is a column, not a surprise</span>
+          <span class="inline-flex items-center gap-2">
+            <span class="w-5 h-5 rounded flex items-center justify-center text-[0.6875rem] font-mono text-text-dim border border-surface1 shrink-0">6</span>
+            <span class="font-mono text-[0.625rem] uppercase tracking-wider text-[#a6e3a1]">cost is a column, not a surprise</span>
+          </span>
           <h3 class="text-[1.25rem] mt-2 mb-3">An economics ledger nobody else has</h3>
           <p class="text-[0.875rem] text-text-muted max-w-[480px]">
             Cost and turns per session, per mode, per task. Where the time goes, which

@@ -1,0 +1,74 @@
+---
+// Short FAQ for the landing page. Docs carry the comparison paragraph.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const faqs = [
+  {
+    q: 'Is Continuum another AI coding IDE?',
+    a: 'No. It sits above the editor and the agent. They execute; Continuum writes the task they run, merges it only after its own validation passed, and refuses to take their word for done. Keep whatever editor and agent you already use.',
+  },
+  {
+    q: 'Where does my code and work state live?',
+    a: 'In your repositories and your git. Work state is YAML and markdown in a directory beside the work. There is no server, no account, and no second copy of what is true.',
+  },
+  {
+    q: 'Which models, and what does it cost to run?',
+    a: 'Model-agnostic by construction; today it drives Claude Code on the subscription you already pay for. Continuum adds no API-key metering and no per-token markup. Every task records its own inference cost in task.yaml; the one on this page cost $5.23 over 86 turns.',
+  },
+  {
+    q: 'Can I use it today?',
+    a: 'It has run its creator\'s daily work since 2025 and is being hardened for outside users, on macOS. It is not publicly installable yet. The open-source standards layer runs in your editor today. For early access or a pilot, ask.',
+  },
+  {
+    q: 'Can my team use it?',
+    a: 'One engineer at a time today. A pilot is how a team finds out what the lead\'s screen must show.',
+  },
+];
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Continuum',
+      applicationCategory: 'DeveloperApplication',
+      operatingSystem: 'macOS',
+      description:
+        'A desktop workstation above your editor and your agents: a thread, a meeting note, an idea on the way out becomes ordered tasks, runs on the agents you already use, and is done only when the commit is on your remote.',
+      author: { '@type': 'Organization', name: 'Tiphareth Studio' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+});
+---
+
+<section id="faq" class="py-10 md:py-16 px-6 relative scroll-mt-14">
+  <div class="continuum-rule max-w-7xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 w-full"></div>
+  <div class="relative max-w-4xl mx-auto">
+    <span class="eyebrow mb-4 block" style="color: #89dceb;">Questions</span>
+    <h2 class="text-[1.875rem] md:text-[2.25rem] mb-10">Before you ask.</h2>
+    <div class="flex flex-col gap-3">
+      {faqs.map((f) => (
+        <details class="glass-card px-6 py-4 group">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 text-[0.9375rem] font-display font-semibold text-text-primary">
+            {f.q}
+            <span class="font-mono text-text-dim text-[0.875rem] group-open:rotate-45 transition-transform shrink-0">+</span>
+          </summary>
+          <p class="mt-3 text-[0.8438rem] text-text-muted leading-relaxed max-w-[70ch]">{f.a}</p>
+        </details>
+      ))}
+    </div>
+    <p class="mt-6 font-mono text-[0.6875rem] text-text-dim">
+      Compared to Devin, Factory, Copilot and the rest: in the <a href={`${base}/docs/`} class="text-text-muted hover:text-text-primary">docs →</a>
+    </p>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={jsonLd} />

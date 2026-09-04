@@ -1,0 +1,27 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import Problem from '../../components/Problem.astro';
+import Distill from '../../components/Distill.astro';
+import Features from '../../components/Features.astro';
+---
+
+<DocsLayout
+  title="How it works"
+  eyebrow="The line"
+  color="#89b4fa"
+  intro="A malformed signal enters; refined briefs leave; the queue takes them into implementation; delivery is checked against the remote. First the line, stage by stage. Then the six mechanisms that make each stage stop living in the operator."
+>
+  <Problem />
+  <Distill />
+  <Features />
+
+  <section class="py-8 md:py-14">
+    <span class="eyebrow mb-4 block" style="color:#d4af37;">Supervision</span>
+    <h2 class="text-[1.5rem] md:text-[1.875rem] mb-4">Supervision that never stalls</h2>
+    <p class="text-text-muted max-w-[640px]">
+      Autonomy that cannot be inspected is opacity with a better name. Every mode is
+      named, every gate is checkable, every session can be reopened by hand, and the
+      merge is always yours.
+    </p>
+  </section>
+</DocsLayout>
